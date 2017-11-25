@@ -153,7 +153,7 @@ StenoDisplay.Stroke = function(container) {
 	var numCell = document.createElement('td');
 	var numBar = document.createElement('div');
 	numBar.className = 'numberBar';
-	numCell.colSpan = 10;
+	numCell.colSpan = 11;
 	numCell.appendChild(numBar);
 	num.appendChild(numCell);
 	this.keys.appendChild(num);
@@ -164,19 +164,16 @@ StenoDisplay.Stroke = function(container) {
 	this.keys.appendChild(upper);
 	this.keys.appendChild(lower);
 	this.keys.appendChild(vowel);
-	var upperKeys = ['S', 'T', 'P', 'H', '*', 'F', 'P', 'L', 'T', 'D'];
-	var lowerKeys =      ['K', 'W', 'R',      'R', 'B', 'G', 'S', 'Z'];
-	var vowelKeys = ['', 'A', 'O', '', 'E', 'U'];
+	var upperKeys = ['A', 'N', 'I', 'G', 'D', ':', 'D', 'G', 'I', 'N', 'A'];
+	var lowerKeys = ['O', 'E', 'U', 'W', 'Z', ':', 'Z', 'W', 'U', 'E', 'O'];
+	var vowelKeys = ['', 'B', 'X', ':', 'X', 'B'];
 	var upperCells = addCells(upper, upperKeys);
 	var lowerCells = addCells(lower, lowerKeys);
 	var vowelCells = addCells(vowel, vowelKeys);
+	
+	upperCells[5].rowSpan = 2;
 
-	upperCells[0].rowSpan = 2;
-	upperCells[4].rowSpan = 2;
-
-	upperCells[4].className = 'alt wide';
-	upperCells[9].className = 'alt';
-	lowerCells[7].className = 'alt';
+	upperCells[5].className = 'alt';
 
 	vowelCells[0].colSpan = 2;
 	vowelCells[1].className = 'leftVowel';
@@ -188,15 +185,15 @@ StenoDisplay.Stroke = function(container) {
 
 	this.leftCells = {
 		'#': numCell,
-		S: upperCells[0], T: upperCells[1], P: upperCells[2], H: upperCells[3],
-		                  K: lowerCells[0], W: lowerCells[1], R: lowerCells[2]
+		A: upperCells[0], N: upperCells[1], I: upperCells[2], G: upperCells[3], D: upperCells[4],
+		O: lowerCells[0], E: lowerCells[1], U: lowerCells[2], W: lowerCells[3], Z: lowerCells[4]
 	};
 	this.rightCells = {
-		'*': upperCells[4], F: upperCells[5], P: upperCells[6], L: upperCells[7], T: upperCells[8], D: upperCells[9],
-		R: lowerCells[3], B: lowerCells[4], G: lowerCells[5], S: lowerCells[6], Z: lowerCells[7]
+		':': upperCells[5], D: upperCells[6], G: upperCells[7], I: upperCells[8], N: upperCells[9], A: upperCells[10],
+		Z: lowerCells[5], W: lowerCells[6], U: lowerCells[7], E: lowerCells[8], O: lowerCells[9]
 	};
 	this.vowelCells = {
-		A: vowelCells[1], O: vowelCells[2], '*': upperCells[4], E: vowelCells[4], U: vowelCells[5]
+		B: vowelCells[1], X: vowelCells[2], ':': upperCells[5], X: vowelCells[4], B: vowelCells[5]
 	};
 }
 
