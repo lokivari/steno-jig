@@ -19,37 +19,25 @@
 		"不得", "佈置", "布格", "不宜", "不無", "布恩", "不額", "不啊", "不我"]
 	];
 
-	TypeJig.WordSets['-ld/-lt'] = [
-		"adult", "asphalt", "assault", "bald", "basalt",
-		"beheld", "behold", "belt", "bold", "bolt",
-		"build", "built", "catapult", "child", "cobalt",
-		"cold", "colt", "consult", "cult", "dealt",
-		"default", "difficult", "dolt", "dwelt", "emerald",
-		"exalt", "exult", "fault", "felt", "field",
-		"fold"
+	TypeJig.WordSets['Ch2-initials'] = [
+		"夫婦", "布鋪", "不睦", "不服", "瀑布", "鋪木", "匍匐",
+		"幕布", "木鋪", "幕府", "腹部", "副鋪", "父母"
 	];
 
-
-	TypeJig.WordSets.nch = [
-		"century", "accentuate", "adventure", "denture", "eventually",
-		"gargantuan", "indenture", "jointure", "venture", "lynch",
-		"avalanche", "bench", "drench", "blanch", "blench",
-		"branch", "brunch", "cinch", "clench", "clinch",
-		"entrench", "finch", "flinch", "grinch", "haunch",
-		"henchmen", "hunch", "linchpin", "munch", "paunch",
-		"pinch", "punch", "quench", "ranch", "raunchy",
-		"scrunch", "squinch", "stanch", "staunch", "tench",
-		"trench", "truncheon", "wench", "winch", "wrench"
+	TypeJig.WordSets.['Ch2-briefs'] = [
+	"不能", "部分", "普遍", "普通", "目的", "目前", "複雜", "負責,"
+	"八", "八月", "。"'，'"
 	];
 
-	TypeJig.WordSets['-nj'] = [
-		"arrange", "avenge", "binge", "challenge", "change",
-		"cringe", "derange", "exchange", "expunge", "flange",
-		"fringe", "grange", "grunge", "hinge", "impinge",
-		"lounge", "lozenge", "lunge", "mange", "melange",
-		"muskellunge", "orange", "plunge", "range", "revenge",
-		"scavenge", "scrounge", "singe", "sponge", "strange",
-		"syringe", "tinge", "twinge",
+	TypeJig.WordSets['Ch2-comprehensive'] = [
+	"夫婦", "布鋪", "不睦", "不服", "瀑布", "鋪木", "匍匐", "幕布", 
+	"木鋪", "幕府", "腹部", "副鋪", "父母", "不得", "布置", "布格", 
+	"不宜", "不無", "鋪的", "樸直", "譜儀", "穆德", "拇指", "牧歌", 
+	"木屋", "福德", "複製", "弗戈", "複議", "服務", "俯臥", "得不", 
+	"支部", "葛布", "異步", "無不", "顎部", "我不", "質樸", "歌譜", 
+	"臥鋪", "姨母", "烏木", "阿姆", "德芙", "支付", "衣服", "不能", 
+	"部分", "普遍", "普通", "目的", "目前", "複雜", "負責," "八", 
+	"八月", "。", "，", "八部", "八畝"
 	];
 
 	TypeJig.WordSets['ite/ight'] = [
