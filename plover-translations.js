@@ -9,8 +9,6 @@ TypeJig.Translations.Plover = {
 	"無": "U",
 	"只": "Z",
 	"不": "B",
-	"娃": "W",
-	"喜": "X",
 	"德德": "D-D",
 	"得知": "D-Z",
 	"德格": "D-G",
