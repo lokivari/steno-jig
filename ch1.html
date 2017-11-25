@@ -51,51 +51,15 @@
 	<h3>Exercises</h3>
 <p>Practice individual keys on each hand, then when comfortable, remove hints. Once you are able to remember the position of the keys, move on to two character phrases.</p></p>
 
-	<div class="scroll-margin"><div id="strokes"></div></div>
-
-	<div class="scroll-bounds"><div id="exercise" style="white-space: nowrap"></div></div>
-
-	<div id="answer" class="answer scroll-margin" contenteditable="true"><span class="prompt">Type here...</span></div>
-
-	<p id="clock" class="clock"></p>
-
-	<p id="error-log"></p>
 </div>
 
-	<script>
-		var words = TypeJig.WordSets.Yanheng-single-keys;
-		var translations = TypeJig.shortestTranslations(TypeJig.Translations.Plover);
-		for(key in extra) translations[key] = extra[key];
-		var hints = new StenoDisplay('strokes', translations, true);
-		var exercise = new TypeJig.Exercise(words);
-		var jig = new TypeJig(exercise, 'exercise', 'answer', 'clock', hints);
-	</script>
-  <br>
-  	<script>
-		var words = TypeJig.WordSets.Yanheng-single-keys;
-		var translations = TypeJig.shortestTranslations(TypeJig.Translations.Plover);
-		for(key in extra) translations[key] = extra[key];
-		var hints = new StenoDisplay('strokes', translations, false);
-		var exercise = new TypeJig.Exercise(words);
-		var jig = new TypeJig(exercise, 'exercise', 'answer', 'clock', hints);
-	</script>
-<br>
-	<script>
-		var words = TypeJig.WordSets.Ch1-words;
-		var translations = TypeJig.shortestTranslations(TypeJig.Translations.Plover);
-		for(key in extra) translations[key] = extra[key];
-		var hints = new StenoDisplay('strokes', translations, true);
-		var exercise = new TypeJig.Exercise(words);
-		var jig = new TypeJig(exercise, 'exercise', 'answer', 'clock', hints);
-	</script>
-  <br>
-  	<script>
-		var words = TypeJig.WordSets.Ch1-words;
-		var translations = TypeJig.shortestTranslations(TypeJig.Translations.Plover);
-		for(key in extra) translations[key] = extra[key];
-		var hints = new StenoDisplay('strokes', translations, false);
-		var exercise = new TypeJig.Exercise(words);
-		var jig = new TypeJig(exercise, 'exercise', 'answer', 'clock', hints);
-	</script>
+<div class="form-section">
+		<div class="caption">Chapter one exercises.</div>
+		<ul>
+			<li><a href="form.html?drill=Yanheng-single-keys&type=randomly&timeLimit=5&hints=true">Single keys for five minutes (with hints).</a></li>
+			<li><a href="form.html?drill=Yanheng-single-keys&type=randomly&timeLimit=5&hints=false">Single keys for five minutes (no hints).</a></li>
+			<li><a href="form.html?drill=WordSets.Ch1-words&type=randomly&timeLimit=5&hints=true">Two character phrases (one key on each hand) with hints.</a></li>
+			<li><a href="form.html?drill=WordSets.Ch1-words&type=randomly&timeLimit=5&hints=true">Two character phrases (one key on each hand), no hints.</a></li>
+</div>
 </body>
 </html>
