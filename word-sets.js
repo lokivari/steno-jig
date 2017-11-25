@@ -26,7 +26,7 @@
 
 	TypeJig.WordSets.['Ch2-briefs'] = [
 	"不能", "部分", "普遍", "普通", "目的", "目前", "複雜", "負責,"
-	"八", "八月", "。"'，'"
+	"八", "八月", "。", "，"
 	];
 
 	TypeJig.WordSets['Ch2-comprehensive'] = [
