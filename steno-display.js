@@ -178,8 +178,8 @@ StenoDisplay.Stroke = function(container) {
 	vowelCells[0].colSpan = 2;
 	vowelCells[1].className = 'leftVowel';
 	vowelCells[2].className = 'leftVowel';
+	vowelCells[4].className = 'rightVowel';
 	vowelCells[5].className = 'rightVowel';
-	vowelCells[6].className = 'rightVowel';
 
 	container.appendChild(this.keys);
 
@@ -265,10 +265,10 @@ function removeClassFromAllPropertiesOf(obj, className) {
 
 var leftFromPseudo = {
 	'C': 'K',
-	'D': 'TK', 'B': 'PW', 'L': 'HR',
-	'F': 'TP', 'M': 'PH', 'N': 'TPH',
+	'L': 'HR',
+	'F': 'TP', 'M': 'PH',
 	'Q': 'KW', 'Y': 'KWR', 'J': 'SKWR', 'V': 'SR',
-	'G': 'TKPW', 'X': 'KP', 'Z': 'STKPW'
+	'X': 'KP'
 };
 var vowelFromPseudo = {
 	'AY': 'AEU', 'OH': 'OE', 'EE': 'AOE', 'UU': 'AOU',
