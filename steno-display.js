@@ -73,9 +73,9 @@ function cmpStenoNumKeys(a, b) {
 
 StenoDisplay.prototype.numberStrokes = function(text) {
 	var keys = {
-		1: 'S', 2: 'T', 3: 'P', 4: 'H',
-		5: 'A', 0: 'O',
-		6: 'F', 7: 'P', 8: 'L', 9: 'T'
+		1: 'A-', 2: 'N-', 3: 'I-', 4: 'G-',
+		5: 'D-', 0: '-A',
+		6: '-D', 7: '-G', 8: '-I', 9: '-N'
 	};
 	var strokes = '', stroke = [];
 	for(var i=0; i<text.length; i+=2) {
@@ -164,9 +164,9 @@ StenoDisplay.Stroke = function(container) {
 	this.keys.appendChild(upper);
 	this.keys.appendChild(lower);
 	this.keys.appendChild(vowel);
-	var upperKeys = ['S', 'T', 'P', 'H', '*', 'F', 'P', 'L', 'T', 'D'];
-	var lowerKeys =      ['K', 'W', 'R',      'R', 'B', 'G', 'S', 'Z'];
-	var vowelKeys = ['', 'A', 'O', '', 'E', 'U'];
+	var upperKeys = ['A', 'N', 'I', 'G', 'D', 'D', 'G', 'I', 'N', 'A'];
+	var lowerKeys = ['O', 'E', 'U', 'W', 'Z', 'Z', 'W', 'U', 'E', 'O'];
+	var vowelKeys = ['', 'B', 'X', '', 'X', 'B'];
 	var upperCells = addCells(upper, upperKeys);
 	var lowerCells = addCells(lower, lowerKeys);
 	var vowelCells = addCells(vowel, vowelKeys);
@@ -188,15 +188,15 @@ StenoDisplay.Stroke = function(container) {
 
 	this.leftCells = {
 		'#': numCell,
-		S: upperCells[0], T: upperCells[1], P: upperCells[2], H: upperCells[3],
-		                  K: lowerCells[0], W: lowerCells[1], R: lowerCells[2]
+		A: upperCells[0], N: upperCells[1], I: upperCells[2], G: upperCells[3], D: upperCells[4],
+		O: upperCells[0], E: lowerCells[1], U: lowerCells[2], W: lowerCells[3], Z: upperCells[4]
 	};
 	this.rightCells = {
-		'*': upperCells[4], F: upperCells[5], P: upperCells[6], L: upperCells[7], T: upperCells[8], D: upperCells[9],
-		R: lowerCells[3], B: lowerCells[4], G: lowerCells[5], S: lowerCells[6], Z: lowerCells[7]
+		D: upperCells[5], G: upperCells[6], I: upperCells[7], N: upperCells[8], A: upperCells[9],
+		Z: lowerCells[5], W: lowerCells[6], U: lowerCells[7], E: lowerCells[8], O: lowerCells[9]
 	};
 	this.vowelCells = {
-		A: vowelCells[1], O: vowelCells[2], '*': upperCells[4], E: vowelCells[4], U: vowelCells[5]
+		B: vowelCells[1], X: vowelCells[2], '*': upperCells[4], X: vowelCells[4], B: vowelCells[5]
 	};
 }
 
