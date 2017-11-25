@@ -73,9 +73,9 @@ function cmpStenoNumKeys(a, b) {
 
 StenoDisplay.prototype.numberStrokes = function(text) {
 	var keys = {
-		1: 'A-', 2: 'N-', 3: 'I-', 4: 'G-',
-		5: 'D-', 0: '-A',
-		6: '-D', 7: '-G', 8: '-I', 9: '-N'
+		1: 'S', 2: 'T', 3: 'P', 4: 'H',
+		5: 'A', 0: 'O',
+		6: 'F', 7: 'P', 8: 'L', 9: 'T'
 	};
 	var strokes = '', stroke = [];
 	for(var i=0; i<text.length; i+=2) {
@@ -164,16 +164,19 @@ StenoDisplay.Stroke = function(container) {
 	this.keys.appendChild(upper);
 	this.keys.appendChild(lower);
 	this.keys.appendChild(vowel);
-	var upperKeys = ['A', 'N', 'I', 'G', 'D', '-', 'D', 'G', 'I', 'N', 'A'];
-	var lowerKeys = ['O', 'E', 'U', 'W', 'Z', '-', 'Z', 'W', 'U', 'E', 'O'];
-	var vowelKeys = ['', 'B', 'X', '-', 'X', 'B'];
+	var upperKeys = ['S', 'T', 'P', 'H', '*', 'F', 'P', 'L', 'T', 'D'];
+	var lowerKeys =      ['K', 'W', 'R',      'R', 'B', 'G', 'S', 'Z'];
+	var vowelKeys = ['', 'A', 'O', '', 'E', 'U'];
 	var upperCells = addCells(upper, upperKeys);
 	var lowerCells = addCells(lower, lowerKeys);
 	var vowelCells = addCells(vowel, vowelKeys);
 
-	upperCells[5].className = 'alt';
-	lowerCells[5].className = 'alt';
-	vowelCells[3].className = 'alt';
+	upperCells[0].rowSpan = 2;
+	upperCells[4].rowSpan = 2;
+
+	upperCells[4].className = 'alt wide';
+	upperCells[9].className = 'alt';
+	lowerCells[7].className = 'alt';
 
 	vowelCells[0].colSpan = 2;
 	vowelCells[1].className = 'leftVowel';
@@ -185,15 +188,15 @@ StenoDisplay.Stroke = function(container) {
 
 	this.leftCells = {
 		'#': numCell,
-		A: upperCells[0], N: upperCells[1], I: upperCells[2], G: upperCells[3], D: upperCells[4], '-': upperCells[5],
-		O: lowerCells[0], E: lowerCells[1], U: lowerCells[2], W: lowerCells[3], Z: lowerCells[4], '-': lowerCells[5]
+		S: upperCells[0], T: upperCells[1], P: upperCells[2], H: upperCells[3],
+		                  K: lowerCells[0], W: lowerCells[1], R: lowerCells[2]
 	};
 	this.rightCells = {
-		D: upperCells[6], G: upperCells[7], I: upperCells[8], N: upperCells[9], A: upperCells[10],
-		Z: lowerCells[6], W: lowerCells[7], U: lowerCells[8], E: lowerCells[9], O: lowerCells[10]
+		'*': upperCells[4], F: upperCells[5], P: upperCells[6], L: upperCells[7], T: upperCells[8], D: upperCells[9],
+		R: lowerCells[3], B: lowerCells[4], G: lowerCells[5], S: lowerCells[6], Z: lowerCells[7]
 	};
 	this.vowelCells = {
-		'': vowelCells[0], B: vowelCells[1], X: vowelCells[2], '-': vowelCells[3], X: vowelCells[4], B: vowelCells[5]
+		A: vowelCells[1], O: vowelCells[2], '*': upperCells[4], E: vowelCells[4], U: vowelCells[5]
 	};
 }
 
@@ -265,10 +268,10 @@ function removeClassFromAllPropertiesOf(obj, className) {
 
 var leftFromPseudo = {
 	'C': 'K',
-	'L': 'HR',
-	'F': 'TP', 'M': 'PH',
+	'D': 'TK', 'B': 'PW', 'L': 'HR',
+	'F': 'TP', 'M': 'PH', 'N': 'TPH',
 	'Q': 'KW', 'Y': 'KWR', 'J': 'SKWR', 'V': 'SR',
-	'X': 'KP'
+	'G': 'TKPW', 'X': 'KP', 'Z': 'STKPW'
 };
 var vowelFromPseudo = {
 	'AY': 'AEU', 'OH': 'OE', 'EE': 'AOE', 'UU': 'AOU',
