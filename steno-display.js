@@ -174,7 +174,7 @@ StenoDisplay.Stroke = function(container) {
 	upperCells[0].rowSpan = 1;
 	upperCells[4].rowSpan = 1;
 
-	upperCells[4].className = 'alt wide';
+	upperCells[4].className = 'alt';
 	upperCells[9].className = 'alt';
 	lowerCells[7].className = 'alt';
 
