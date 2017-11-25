@@ -153,7 +153,7 @@ StenoDisplay.Stroke = function(container) {
 	var numCell = document.createElement('td');
 	var numBar = document.createElement('div');
 	numBar.className = 'numberBar';
-	numCell.colSpan = 10;
+	numCell.colSpan = 11;
 	numCell.appendChild(numBar);
 	num.appendChild(numCell);
 	this.keys.appendChild(num);
@@ -173,13 +173,13 @@ StenoDisplay.Stroke = function(container) {
 
 	upperCells[5].className = 'alt';
 	lowerCells[5].className = 'alt';
-	vowelCells[5].className = 'alt';
+	vowelCells[4].className = 'alt';
 
 	vowelCells[0].colSpan = 2;
 	vowelCells[1].className = 'leftVowel';
 	vowelCells[2].className = 'leftVowel';
-	vowelCells[4].className = 'rightVowel';
 	vowelCells[5].className = 'rightVowel';
+	vowelCells[6].className = 'rightVowel';
 
 	container.appendChild(this.keys);
 
