@@ -264,22 +264,10 @@ function removeClassFromAllPropertiesOf(obj, className) {
 // ---------------------------------------------------------------------
 
 var leftFromPseudo = {
-	'C': 'K',
-	'L': 'HR',
-	'F': 'TP', 'M': 'PH',
-	'Q': 'KW', 'Y': 'KWR', 'J': 'SKWR', 'V': 'SR',
 };
 var vowelFromPseudo = {
-	'AY': 'AEU', 'OH': 'OE', 'EE': 'AOE', 'UU': 'AOU',
-	'IE': 'AOEU',
-	'AW': 'AU', 'OW': 'OU', 'OI': 'OEU',
-	'EA': 'AE', 'OA': 'AO', 'OO': 'AO'
 };
 var rightFromPseudo = {
-	'TH': '*T', 'CH': 'FP', 'SH': 'RB', 'RCH': 'FRPB',
-	'NG': 'PBG', 'NK': 'PBG',
-	'M': 'PL', 'K': 'BG', 'SHN': 'GS', 'KSHN': 'BGS',
-	'J': 'PBLG', 'RBGS': 'RBGS'
 };
 var left_re = /C|L|J|V|F|Y|Q|M|0|1|2|3|4|5|6|7|8|9|S|K|P|H|R/g;
 var vowel_re = /AY|OA|OO|AW|EA|EE|OH|UU|OI|IE|OW|I|0|1|2|3|4|5|6|7|8|9/g;
