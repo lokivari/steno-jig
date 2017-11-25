@@ -3,7 +3,7 @@
 	
 	TypeJig.WordSets['Yanheng-single-keys'] = [
 		"的", "個", "一", "恩", "啊", "只", 
-		"無", "餓", "我", "不"
+		"無", "餓", "我", "不", "娃", "喜"
 	];
 
 	TypeJig.WordSets['d-/b-'] = [
