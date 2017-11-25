@@ -193,7 +193,7 @@ StenoDisplay.Stroke = function(container) {
 		                    Z: lowerCells[5], W: lowerCells[6], U: lowerCells[7], E: lowerCells[8], O: lowerCells[9]
 	};
 	this.vowelCells = {
-		B: vowelCells[1], X: vowelCells[2], X: vowelCells[4], B: vowelCells[5]
+		B: vowelCells[1], X: vowelCells[2], ':': upperCells[5], X: vowelCells[4], B: vowelCells[5]
 	};
 }
 
