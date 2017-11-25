@@ -165,8 +165,8 @@ StenoDisplay.Stroke = function(container) {
 	this.keys.appendChild(lower);
 	this.keys.appendChild(vowel);
 	var upperKeys = ['A', 'N', 'I', 'G', 'D', ':', 'D', 'G', 'I', 'N', 'A'];
-	var lowerKeys = ['O', 'E', 'U', 'W', 'Z', ':', 'Z', 'W', 'U', 'E', 'O'];
-	var vowelKeys = ['', 'B', 'X', ':', 'X', 'B'];
+	var lowerKeys = ['O', 'E', 'U', 'W', 'Z',      'Z', 'W', 'U', 'E', 'O'];
+	var vowelKeys = ['', 'B', 'X', '', 'X', 'B'];
 	var upperCells = addCells(upper, upperKeys);
 	var lowerCells = addCells(lower, lowerKeys);
 	var vowelCells = addCells(vowel, vowelKeys);
