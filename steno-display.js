@@ -65,7 +65,7 @@ StenoDisplay.prototype.lookupEntry = function(text) {
 	return strokes;
 }
 
-var stenoNumKeyOrder = '#123450I6789D';
+var stenoNumKeyOrder = '#1234567890';
 
 function cmpStenoNumKeys(a, b) {
 	return stenoNumKeyOrder.indexOf(a) - stenoNumKeyOrder.indexOf(b);
@@ -73,9 +73,9 @@ function cmpStenoNumKeys(a, b) {
 
 StenoDisplay.prototype.numberStrokes = function(text) {
 	var keys = {
-		1: 'S', 2: 'T', 3: 'P', 4: 'H',
-		5: 'A', 0: 'O',
-		6: 'F', 7: 'P', 8: 'L', 9: 'T'
+		1: 'A-', 2: 'N-', 3: 'I-', 4: 'G-',
+		5: 'D-', 0: '-A',
+		6: '-D', 7: '-G', 8: '-I', 9: '-N'
 	};
 	var strokes = '', stroke = [];
 	for(var i=0; i<text.length; i+=2) {
@@ -265,20 +265,19 @@ function removeClassFromAllPropertiesOf(obj, className) {
 
 var leftFromPseudo = {
 	'C': 'K',
-	'D': 'TK', 'B': 'PW', 'L': 'HR',
-	'F': 'TP', 'M': 'PH', 'N': 'TPH',
+	'L': 'HR',
+	'F': 'TP', 'M': 'PH',
 	'Q': 'KW', 'Y': 'KWR', 'J': 'SKWR', 'V': 'SR',
-	'G': 'TKPW', 'X': 'KP', 'Z': 'STKPW'
 };
 var vowelFromPseudo = {
 	'AY': 'AEU', 'OH': 'OE', 'EE': 'AOE', 'UU': 'AOU',
-	'I': 'EU', 'IE': 'AOEU',
+	'IE': 'AOEU',
 	'AW': 'AU', 'OW': 'OU', 'OI': 'OEU',
 	'EA': 'AE', 'OA': 'AO', 'OO': 'AO'
 };
 var rightFromPseudo = {
 	'TH': '*T', 'CH': 'FP', 'SH': 'RB', 'RCH': 'FRPB',
-	'N': 'PB', 'NG': 'PBG', 'NK': 'PBG',
+	'NG': 'PBG', 'NK': 'PBG',
 	'M': 'PL', 'K': 'BG', 'SHN': 'GS', 'KSHN': 'BGS',
 	'J': 'PBLG', 'RBGS': 'RBGS'
 };
