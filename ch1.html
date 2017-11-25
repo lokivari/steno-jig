@@ -9,6 +9,14 @@
 	<script src="word-sets.js"></script>
 	<script src="plover-translations.js"></script>
 	<link rel="stylesheet" type="text/css" href="font-roboto.css">
+<style>
+	table, th, td {
+    	border: 1px solid black;
+	}
+	th, td {
+    	text-align: center;
+	}
+</style>
 </head>
 <body>
 
@@ -62,8 +70,8 @@
 		var exercise = new TypeJig.Exercise(words);
 		var jig = new TypeJig(exercise, 'exercise', 'answer', 'clock', hints);
 	</script>
-  
-  <script>
+  <br>
+  	<script>
 		var words = TypeJig.WordSets.Yanheng-single-keys;
 		var translations = TypeJig.shortestTranslations(TypeJig.Translations.Plover);
 		for(key in extra) translations[key] = extra[key];
@@ -71,7 +79,7 @@
 		var exercise = new TypeJig.Exercise(words);
 		var jig = new TypeJig(exercise, 'exercise', 'answer', 'clock', hints);
 	</script>
-
+<br>
 	<script>
 		var words = TypeJig.WordSets.Ch1-words;
 		var translations = TypeJig.shortestTranslations(TypeJig.Translations.Plover);
@@ -80,8 +88,8 @@
 		var exercise = new TypeJig.Exercise(words);
 		var jig = new TypeJig(exercise, 'exercise', 'answer', 'clock', hints);
 	</script>
-  
-  <script>
+  <br>
+  	<script>
 		var words = TypeJig.WordSets.Ch1-words;
 		var translations = TypeJig.shortestTranslations(TypeJig.Translations.Plover);
 		for(key in extra) translations[key] = extra[key];
