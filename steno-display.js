@@ -173,9 +173,9 @@ StenoDisplay.Stroke = function(container) {
 
 	upperCells[5].className = 'alt';
 	lowerCells[5].className = 'alt';
-	vowelCells[4].className = 'alt';
+	vowelCells[3].className = 'alt';
 
-	vowelCells[0].colSpan = 2;
+	vowelCells[0].colSpan = 3;
 	vowelCells[1].className = 'leftVowel';
 	vowelCells[2].className = 'leftVowel';
 	vowelCells[5].className = 'rightVowel';
@@ -193,7 +193,7 @@ StenoDisplay.Stroke = function(container) {
 		Z: lowerCells[6], W: lowerCells[7], U: lowerCells[8], E: lowerCells[9], O: lowerCells[10]
 	};
 	this.vowelCells = {
-		B: vowelCells[1], X: vowelCells[2], '-': vowelCells[4], X: vowelCells[5], B: vowelCells[6]
+		B: vowelCells[1], X: vowelCells[2], '-': vowelCells[3], X: vowelCells[4], B: vowelCells[5]
 	};
 }
 
@@ -260,41 +260,6 @@ function removeClassFromAllPropertiesOf(obj, className) {
 	}
 }
 
-
-// ---------------------------------------------------------------------
-
-var leftFromPseudo = {
-	'C': 'K',
-	'D': 'TK', 'B': 'PW', 'L': 'HR',
-	'F': 'TP', 'M': 'PH', 'N': 'TPH',
-	'Q': 'KW', 'Y': 'KWR', 'J': 'SKWR', 'V': 'SR',
-	'G': 'TKPW', 'X': 'KP', 'Z': 'STKPW'
-};
-var vowelFromPseudo = {
-	'AY': 'AEU', 'OH': 'OE', 'EE': 'AOE', 'UU': 'AOU',
-	'I': 'EU', 'IE': 'AOEU',
-	'AW': 'AU', 'OW': 'OU', 'OI': 'OEU',
-	'EA': 'AE', 'OA': 'AO', 'OO': 'AO'
-};
-var rightFromPseudo = {
-	'TH': '*T', 'CH': 'FP', 'SH': 'RB', 'RCH': 'FRPB',
-	'N': 'PB', 'NG': 'PBG', 'NK': 'PBG',
-	'M': 'PL', 'K': 'BG', 'SHN': 'GS', 'KSHN': 'BGS',
-	'J': 'PBLG', 'RBGS': 'RBGS'
-};
-var left_re = /C|L|G|Z|N|J|X|B|V|F|Y|Q|D|M|0|1|2|3|4|5|6|7|8|9|S|T|K|P|W|H|R/g;
-var vowel_re = /AY|OA|OO|AW|EA|EE|OH|UU|OI|IE|OW|I|0|1|2|3|4|5|6|7|8|9|A|O|E|U/g;
-var right_re = /RBGS|KSHN|SHN|RCH|CH|SH|NG|NK|TH|K|J|N|M|0|1|2|3|4|5|6|7|8|9|\*|F|R|P|B|L|G|T|S|D|Z/g;
-var separation_re = /([^AOEUI*-]*)([AO*EUI-][AO*EUIHYW-]*|)(.*)/;
-
-function pseudoStrokeToSteno(stroke) {
-	match = separation_re.exec(stroke);
-	var b = match[1], v = match[2], e = match[3];
-	var left = b.replace(left_re, function(m) { return leftFromPseudo[m] || m; });
-	var vowel = v.replace(vowel_re, function(m) { return vowelFromPseudo[m] || m; });
-	var right = e.replace(right_re, function(m) { return rightFromPseudo[m] || m; });
-	return [left, vowel, right];
-}
 
 
 // ---------------------------------------------------------------------
