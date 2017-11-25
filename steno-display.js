@@ -175,7 +175,7 @@ StenoDisplay.Stroke = function(container) {
 
 	upperCells[5].className = 'alt';
 
-	vowelCells[0].colSpan = 3;
+	vowelCells[0].colSpan = 2;
 	vowelCells[1].className = 'leftVowel';
 	vowelCells[2].className = 'leftVowel';
 	vowelCells[4].className = 'rightVowel';
