@@ -1,5 +1,10 @@
 // Wrap everything in a function to avoid polluting the global namespace.
 (function() {
+	
+	TypeJig.WordSets['Yanheng-single-keys'] = [
+		"的", "個", "一", "恩", "啊", "只", 
+		"無", "餓", "我", "不"
+	];
 
 	TypeJig.WordSets['d-/b-'] = [
 		["dig", "dog", "doff", "due", "dual",
