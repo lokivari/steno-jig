@@ -171,8 +171,8 @@ StenoDisplay.Stroke = function(container) {
 	var lowerCells = addCells(lower, lowerKeys);
 	var vowelCells = addCells(vowel, vowelKeys);
 
-	upperCells[0].rowSpan = 2;
-	upperCells[4].rowSpan = 2;
+	upperCells[0].rowSpan = 1;
+	upperCells[4].rowSpan = 1;
 
 	upperCells[4].className = 'alt wide';
 	upperCells[9].className = 'alt';
