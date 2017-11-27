@@ -33,7 +33,7 @@
 </div>
 
 	<script>
-		var words = TypeJig.WordSets.YanhengSingleKeys;
+		var words = TypeJig.WordSets.twoKeySentence;
 		var translations = TypeJig.shortestTranslations(TypeJig.Translations.Plover);
 		for(key in extra) translations[key] = extra[key];
 		var hints = new StenoDisplay('strokes', translations, true);
