@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>速錄手舞 | Yanheng Jig</title>
+	<link href="style.css" rel="stylesheet" type="text/css">
+	<script src="type-jig.js"></script>
+	<script src="steno-display.js"></script>
+	<script src="word-sets.js"></script>
+	<script src="plover-translations.js"></script>
+	<link rel="stylesheet" type="text/css" href="font-roboto.css">
+</head>
+<body>
+
+<div id="lesson">
+	<h3 class="center">單指打字練習 | Single Key Practice</h3>
+
+	<p class="wrapper">開始練習前，將Plover所有的詞庫檔移除。<br>
+  Remove all dictionaries from Plover before starting 
+  this exercise.</p>
+
+	<div class="scroll-margin"><div id="strokes"></div></div>
+
+	<div class="scroll-bounds"><div id="exercise" style="white-space: nowrap"></div></div>
+
+	<div id="answer" class="answer scroll-margin" contenteditable="true"><span class="prompt">Type here...</span></div>
+
+	<p id="clock" class="clock"></p>
+
+	<p id="error-log"></p>
+</div>
+
+	<script>
+		var words = TypeJig.WordSets.YanhengSingleKeys;
+		var translations = TypeJig.shortestTranslations(TypeJig.Translations.Plover);
+		var hints = new StenoDisplay('strokes', translations, true);
+		var exercise = new TypeJig.Exercise(words);
+		var jig = new TypeJig(exercise, 'exercise', 'answer', 'clock', hints);
+	</script>
+
+</body>
+</html>
