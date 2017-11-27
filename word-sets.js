@@ -2,10 +2,10 @@
 (function() {
 
 	TypeJig.WordSets['YanhengSingleKeys'] = [
-		"D", "G", "I", "N", "A", "Z", 
-		"W", "U", "E", "O", "B", "X",
-		"-D", "-G", "-I", "-N", "-A", "-Z", 
-		"-W", "-U", "-E", "-O", "-B", "-X"
+		["D", "-D"], ["G", "-G"], ["I", "-I"], 
+		["N", "-N"], ["A", "-A"], ["Z", "-Z"], 
+		["W", "-W"], ["U", "-U"], ["E", "-E"],
+		["O", "-O"], ["B", "-B"], ["X", "-X"]
 	];
 
 	TypeJig.WordSets['-ld/-lt'] = [
