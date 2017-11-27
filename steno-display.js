@@ -171,7 +171,7 @@ StenoDisplay.Stroke = function(container) {
 	var lowerCells = addCells(lower, lowerKeys);
 	var vowelCells = addCells(vowel, vowelKeys);
 	
-	upperCells[5].rowSpan = 3;
+	upperCells[5].rowSpan = 2;
 
 	upperCells[5].className = 'alt';
 
@@ -265,16 +265,12 @@ function removeClassFromAllPropertiesOf(obj, className) {
 
 var leftFromPseudo = {
 	'C': 'K',
-	'D': 'TK', 'B': 'PW', 'L': 'HR',
-	'F': 'TP', 'M': 'PH', 'N': 'TPH',
-	'Q': 'KW', 'Y': 'KWR', 'J': 'SKWR', 'V': 'SR',
-	'G': 'TKPW', 'X': 'KP', 'Z': 'STKPW'
-};
+	'L': 'HR',
+	'F': 'TP', 'M': 'PH',
+	'Q': 'KW', 'Y': 'KWR', 'J': 'SKWR', 'V': 'SR'
+	};
 var vowelFromPseudo = {
-	'AY': 'AEU', 'OH': 'OE', 'EE': 'AOE', 'UU': 'AOU',
-	'I': 'EU', 'IE': 'AOEU',
-	'AW': 'AU', 'OW': 'OU', 'OI': 'OEU',
-	'EA': 'AE', 'OA': 'AO', 'OO': 'AO'
+	'AY': 'AEU'
 };
 var rightFromPseudo = {
 	'TH': '*T', 'CH': 'FP', 'SH': 'RB', 'RCH': 'FRPB',
