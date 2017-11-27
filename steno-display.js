@@ -65,7 +65,7 @@ StenoDisplay.prototype.lookupEntry = function(text) {
 	return strokes;
 }
 
-var stenoNumKeyOrder = '#1234567890';
+var stenoNumKeyOrder = '#123450I6789D';
 
 function cmpStenoNumKeys(a, b) {
 	return stenoNumKeyOrder.indexOf(a) - stenoNumKeyOrder.indexOf(b);
@@ -73,9 +73,9 @@ function cmpStenoNumKeys(a, b) {
 
 StenoDisplay.prototype.numberStrokes = function(text) {
 	var keys = {
-		1: 'A-', 2: 'N-', 3: 'I-', 4: 'G-',
-		5: 'D-', 0: '-A',
-		6: '-D', 7: '-G', 8: '-I', 9: '-N'
+		1: 'S', 2: 'T', 3: 'P', 4: 'H',
+		5: 'A', 0: 'O',
+		6: 'F', 7: 'P', 8: 'L', 9: 'T'
 	};
 	var strokes = '', stroke = [];
 	for(var i=0; i<text.length; i+=2) {
@@ -153,7 +153,7 @@ StenoDisplay.Stroke = function(container) {
 	var numCell = document.createElement('td');
 	var numBar = document.createElement('div');
 	numBar.className = 'numberBar';
-	numCell.colSpan = 11;
+	numCell.colSpan = 10;
 	numCell.appendChild(numBar);
 	num.appendChild(numCell);
 	this.keys.appendChild(num);
@@ -164,16 +164,19 @@ StenoDisplay.Stroke = function(container) {
 	this.keys.appendChild(upper);
 	this.keys.appendChild(lower);
 	this.keys.appendChild(vowel);
-	var upperKeys = ['A', 'N', 'I', 'G', 'D', ':', 'D', 'G', 'I', 'N', 'A'];
-	var lowerKeys = ['O', 'E', 'U', 'W', 'Z',      'Z', 'W', 'U', 'E', 'O'];
-	var vowelKeys = ['', 'B', 'X', '', 'X', 'B'];
+	var upperKeys = ['S', 'T', 'P', 'H', '*', 'F', 'P', 'L', 'T', 'D'];
+	var lowerKeys =      ['K', 'W', 'R',      'R', 'B', 'G', 'S', 'Z'];
+	var vowelKeys = ['', 'A', 'O', '', 'E', 'U'];
 	var upperCells = addCells(upper, upperKeys);
 	var lowerCells = addCells(lower, lowerKeys);
 	var vowelCells = addCells(vowel, vowelKeys);
-	
-	upperCells[5].rowSpan = 3;
 
-	upperCells[5].className = 'alt';
+	upperCells[0].rowSpan = 2;
+	upperCells[4].rowSpan = 2;
+
+	upperCells[4].className = 'alt wide';
+	upperCells[9].className = 'alt';
+	lowerCells[7].className = 'alt';
 
 	vowelCells[0].colSpan = 2;
 	vowelCells[1].className = 'leftVowel';
@@ -185,15 +188,15 @@ StenoDisplay.Stroke = function(container) {
 
 	this.leftCells = {
 		'#': numCell,
-		A: upperCells[0], N: upperCells[1], I: upperCells[2], G: upperCells[3], D: upperCells[4],
-		O: lowerCells[0], E: lowerCells[1], U: lowerCells[2], W: lowerCells[3], Z: lowerCells[4]
+		S: upperCells[0], T: upperCells[1], P: upperCells[2], H: upperCells[3],
+		                  K: lowerCells[0], W: lowerCells[1], R: lowerCells[2]
 	};
 	this.rightCells = {
-		':': upperCells[5], D: upperCells[6], G: upperCells[7], I: upperCells[8], N: upperCells[9], A: upperCells[10],
-		                    Z: lowerCells[5], W: lowerCells[6], U: lowerCells[7], E: lowerCells[8], O: lowerCells[9]
+		'*': upperCells[4], F: upperCells[5], P: upperCells[6], L: upperCells[7], T: upperCells[8], D: upperCells[9],
+		R: lowerCells[3], B: lowerCells[4], G: lowerCells[5], S: lowerCells[6], Z: lowerCells[7]
 	};
 	this.vowelCells = {
-		B: vowelCells[1], X: vowelCells[2], ':': upperCells[5], X: vowelCells[4], B: vowelCells[5]
+		A: vowelCells[1], O: vowelCells[2], '*': upperCells[4], E: vowelCells[4], U: vowelCells[5]
 	};
 }
 
@@ -264,19 +267,27 @@ function removeClassFromAllPropertiesOf(obj, className) {
 // ---------------------------------------------------------------------
 
 var leftFromPseudo = {
-	'D': 'D', 'G': 'G', 'I': 'I', 'N': 'N', 'A': 'A',
-	'Z': 'Z', 'W': 'W', 'U': 'U', 'E': 'E', 'O': 'O'
+	'C': 'K',
+	'D': 'TK', 'B': 'PW', 'L': 'HR',
+	'F': 'TP', 'M': 'PH', 'N': 'TPH',
+	'Q': 'KW', 'Y': 'KWR', 'J': 'SKWR', 'V': 'SR',
+	'G': 'TKPW', 'X': 'KP', 'Z': 'STKPW'
 };
 var vowelFromPseudo = {
-	'B': 'B', 'X': 'X'
+	'AY': 'AEU', 'OH': 'OE', 'EE': 'AOE', 'UU': 'AOU',
+	'I': 'EU', 'IE': 'AOEU',
+	'AW': 'AU', 'OW': 'OU', 'OI': 'OEU',
+	'EA': 'AE', 'OA': 'AO', 'OO': 'AO'
 };
 var rightFromPseudo = {
-	'D': 'D', 'G': 'G', 'I': 'I', 'N': 'N', 'A': 'A',
-	'Z': 'Z', 'W': 'W', 'U': 'U', 'E': 'E', 'O': 'O'
+	'TH': '*T', 'CH': 'FP', 'SH': 'RB', 'RCH': 'FRPB',
+	'N': 'PB', 'NG': 'PBG', 'NK': 'PBG',
+	'M': 'PL', 'K': 'BG', 'SHN': 'GS', 'KSHN': 'BGS',
+	'J': 'PBLG', 'RBGS': 'RBGS'
 };
-var left_re = /D|G|I|N|A|Z|W|U|E|O/g;
-var vowel_re = /B|X/g;
-var right_re = /D|G|I|N|A|Z|W|U|E|O/g;
+var left_re = /C|L|G|Z|N|J|X|B|V|F|Y|Q|D|M|0|1|2|3|4|5|6|7|8|9|S|T|K|P|W|H|R/g;
+var vowel_re = /AY|OA|OO|AW|EA|EE|OH|UU|OI|IE|OW|I|0|1|2|3|4|5|6|7|8|9|A|O|E|U/g;
+var right_re = /RBGS|KSHN|SHN|RCH|CH|SH|NG|NK|TH|K|J|N|M|0|1|2|3|4|5|6|7|8|9|\*|F|R|P|B|L|G|T|S|D|Z/g;
 var separation_re = /([^AOEUI*-]*)([AO*EUI-][AO*EUIHYW-]*|)(.*)/;
 
 function pseudoStrokeToSteno(stroke) {
@@ -469,4 +480,4 @@ var unicodeWordChar = '\u0041-\u005a\u00c0-\u00d6\u00d8-\u00de\u0100\u0102\u0104
 var preOrPostChars = new RegExp(
 	'^([^' + unicodeWordChar + ']*)'
 	+ '([' + unicodeWordChar + ']+)'
-	+ '([^' + unicodeWordChar + ']*)$');
++ '([^' + unicodeWordChar + ']*)$');
