@@ -1,15 +1,11 @@
 // Wrap everything in a function to avoid polluting the global namespace.
 (function() {
 
-	TypeJig.WordSets['d-/b-'] = [
-		["dig", "dog", "doff", "due", "dual",
-		"deal", "day", "dad", "date", "dot",
-		"did", "do", "doe", "dove", "down",
-		"death"],
-		["back", "bad", "base", "bass", "boo",
-		"book", "be", "by", "bite", "bog",
-		"bought", "big", "been", "bit", "both",
-		"but"]
+	TypeJig.WordSets['YanhengSingleKeys'] = [
+		"D", "G", "I", "N", "A", "Z", 
+		"W", "U", "E", "O", "B", "X",
+		"-D", "-G", "-I", "-N", "-A", "-Z", 
+		"-W", "-U", "-E", "-O", "-B", "-X"
 	];
 
 	TypeJig.WordSets['-ld/-lt'] = [
