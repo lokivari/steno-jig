@@ -43,7 +43,7 @@
 		};
 		for(key in extra) translations[key] = extra[key];
 		var hints = new StenoDisplay('strokes', translations, true);
-		var exercise = new TypeJig.Exercise(words);
+		var exercise = new TypeJig.Exercise(shuffle);
 		var jig = new TypeJig(exercise, 'exercise', 'answer', 'clock', hints);
 	</script>
 
