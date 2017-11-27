@@ -178,6 +178,7 @@ StenoDisplay.Stroke = function(container) {
 	vowelCells[0].colSpan = 2;
 	vowelCells[1].className = 'leftVowel';
 	vowelCells[2].className = 'leftVowel';
+	vowelCells[3].colSpan = 2;
 	vowelCells[4].className = 'rightVowel';
 	vowelCells[5].className = 'rightVowel';
 
@@ -193,7 +194,7 @@ StenoDisplay.Stroke = function(container) {
 		                    Z: lowerCells[5], W: lowerCells[6], U: lowerCells[7], E: lowerCells[8], O: lowerCells[9]
 	};
 	this.vowelCells = {
-		B: vowelCells[1], X: vowelCells[2], ':': upperCells[5], X: vowelCells[4], B: vowelCells[5]
+		B: vowelCells[1], X: vowelCells[2], X: vowelCells[4], B: vowelCells[5]
 };
 }
 
