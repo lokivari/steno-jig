@@ -33,14 +33,8 @@
 </div>
 
 	<script>
-		var words = TypeJig.WordSets.twoKeySentences;
+		var words = TypeJig.WordSets.YanhengSingleKeys;
 		var translations = TypeJig.shortestTranslations(TypeJig.Translations.Plover);
-		var extra = {
-			"?": "H-F", "charge": "KH", "every": "EF", "perfect": "P-F",
-			"recall": "R-L", "that": "HA", "tuberculosis": "T-B",
-			"from": "PR", "reason": "R-P", "on": "OB", "we": "WE",
-			"who": "HO", "kilograms": "K-G/-S"
-		};
 		for(key in extra) translations[key] = extra[key];
 		var hints = new StenoDisplay('strokes', translations, true);
 		var exercise = new TypeJig.Exercise(words);
