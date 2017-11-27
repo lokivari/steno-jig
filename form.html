@@ -19,10 +19,55 @@
 	<h1>Choose a drill...</h1>
 
 	<div class="form-section">
-		<div class="caption">Practice Yanheng single keys (minus X and W).</div>
+		<div class="caption">Most used <strong>words</strong> (once, in random order)</div>
 
 		<form class="drill-options" action="form.html">
-			<input type="hidden" name="drill" value="Yanheng-single-keys">
+			<input type="hidden" name="drill" value="NGSL_all_forms">
+			<input type="hidden" name="type" value="shuffled">
+
+			Drill
+			<input type="number" name="count" value="100" min="25" max="1000" step="25">
+			words starting at rank
+			<input type="number" name="first" value="0" min="0" max="1100" step="25">
+			<br>
+
+			<div name="hints">
+				<label><input type="checkbox" name="hints" value="1" checked>Show hints</label>
+			</div>
+
+			<button>Start Drill &rarr;</button>
+		</form>
+	</div>
+
+	<div class="form-section">
+		<div class="caption"><strong>Sentences</strong> extracted from <a href="https://www.gutenberg.org/">Project Gutenberg</a></div>
+
+		<form class="drill-options" action="gutenberg.html">
+			Drill sentences containing only the top
+			<input type="number" name="top" value="100" min="100" max="8000" step="100">
+			most used words
+			<br>
+
+			Drill Length:
+			<input type="number" name="word_count" value="100" min="50" max="1000" step="50">
+			words <small>(plus the rest of the last sentence.)</small>
+			<br>
+
+			<div name="hints">
+				<label><input type="checkbox" name="hints" value="1" id="ngslHints" checked>Show hints</label>
+			</div>
+
+			<script>document.write('<input type="hidden" name="seed" value="' + Math.random().toString() + '">')</script>
+
+			<button>Start Drill &rarr;</button>
+		</form>
+	</div>
+
+	<div class="form-section">
+		<div class="caption">Phonetic <strong>words</strong> that use exactly one starting <strong>consonant</strong> key, exactly one <strong>vowel</strong> key and exactly one ending <strong>consonant</strong>.</div>
+
+		<form class="drill-options" action="form.html">
+			<input type="hidden" name="drill" value="singleStrokeCVC">
 			<input type="hidden" name="type" value="randomly">
 
 			Drill Time:
@@ -39,9 +84,45 @@
 	</div>
 
 	<div class="form-section">
+		<div class="caption"><strong>Numbers</strong> 1-99 in simple sentences</div>
+
+		<form class="drill-options" action="form.html">
+			<input type="hidden" name="drill" value="NumberSentences">
+			<input type="hidden" name="type" value="randomly">
+
+			Drill Time:
+			<input type="number" name="timeLimit" value="3" min="1" max="60">
+			minutes.
+			<br>
+
+			<div name="hints">
+				<label><input type="checkbox" name="hints" value="1" checked>Show hints</label>
+			</div>
+
+			<button>Start Drill &rarr;</button>
+		</form>
+	</div>
+
+	<div class="form-section">
 		<div class="caption">Other drills.</div>
 		<ul>
-			<li><a href="form.html?drill=Ch1-words&type=randomly&timeLimit=5&hints=true">Practice two character phrases (one key on each hand).</a></li>
+			<li><a href="two-key.html">Sentences which (mostly) only use two keys at once</a></li>
+			<li><a href="form.html?drill=shortAndLongA&type=shuffled&select=shuffled&hints=true">Short and Long A words</a></li>
+			<li><a href="form.html?drill=ST%20words&drill=SH%20words&drill=CH%20words&type=shuffled&hints=true">"st-", "sh-", and "ch-" words</a></li>
+			<li><a href="form.html?drill=-LD%20words&drill=-LT%20words&drill=-RT%20words&type=shuffled&hints=true">Simple "-ld", "-lt", and "-rt" words</a></li>
+			<li><a href="form.html?drill=%2bLD%20words&drill=%2bLT%20words&drill=%2bRT%20words&type=shuffled&hints=true">Extended "-ld", "-lt", and "-rt" words</a></li>
+			<li><a href="form.html?drill=-LD%20words&drill=-LT%20words&drill=-RT%20words&drill=%2bLD%20words&drill=%2bLT%20words&drill=%2bRT%20words&type=shuffled&hints=true">All "-ld", "-lt", and "-rt" words</a></li>
+			<li><a href="form.html?drill=d-/b-&type=randomly&timeLimit=3">D- and B- words</a></li>
+			<li><a href="form.html?drill=ite/ight&type=randomly&timeLimit=3">-ite/-ight words</a></li>
+			<li><a href="form.html?drill=nch&type=randomly&timeLimit=3">"nch" words</a></li>
+			<li><a href="form.html?drill=-ld/-lt&drill=-nj&type=randomly&timeLimit=5">"-nj" words mixed with "-ld/"/"-lt" ones.</a></li>
+		</ul>
+
+		<p>Finger Drills.  Delete (plover v3) or disable (plover v4) all dictionaries but <code>user.json</code> and <code>commands.json</code> (in plover v3, delete all dictionaries and save to get the default config back).</p>
+		<ul>
+			<li><a href="form.html?drill=Da%20Dreaded%20Dueling%20Digit%20Duo%20Drills%201">Da Dreaded Dueling Digit Duo Drills Section 1</a></li>
+			<li><a href="form.html?drill=Da%20Dreaded%20Dueling%20Digit%20Duo%20Drills%202">Da Dreaded Dueling Digit Duo Drills Section 2</a></li>
+		</ul>
 	</div>
 </div>
 
@@ -74,13 +155,11 @@ window.onload = function() {
 				var translations = TypeJig.shortestTranslations(TypeJig.Translations.Plover);
 				var hints = new StenoDisplay('strokes', translations, true);
 			}
-
 			display_only('lesson');
 			var jig = setExercise(exercise.name, exercise, hints);
 		}
 	}
 }
-
 function display_only(show) {
 	var i, tabs
 	tabs = ['form', 'lesson']
