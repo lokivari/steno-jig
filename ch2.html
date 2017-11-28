@@ -10,13 +10,13 @@
 	<script src="plover-translations.js"></script>
 	<link rel="stylesheet" type="text/css" href="font-roboto.css">
 <style>
+	body {
+		margin: 0;
+	}
 	.center {
 		margin: auto;
 		width: 80%;
 		padding: 10px;
-	}
-	div {
-		margin: 10px 100px;
 	}
 	table, th, td {
     	border: 1px solid black;
@@ -35,16 +35,45 @@
 	ol {
 		padding: 20px;
 	}
-	ul {
-		margin: 10px 10px 10px 100px
+	.nav {
+	    list-style-type: none;
+	    margin: 0;
+	    padding: 0;
+	    width: 175px;
+	    background-color: #f1f1f1;
+	    position: fixed;
+	    height: 100%;
+	    overflow: auto;
 	}
+	li a {
+	    display: block;
+	    color: #000;
+	    padding: 8px 16px;
+	    text-decoration: none;
+	}
+	li a.active {
+		background-color: blue;
+    		color: white;
+	}
+	li a:hover:not(.active) {
+		background-color: #f1f1f1;
+		color: blue;
+	}
+}
 </style>
 </head>
 <body>
-
-<div id="lesson">
+	
+<ul class="nav">
+	<li><a href="index.html">Home</a></li>
+	<li><a href="preface.html">Preface</a></li>
+	<li><a href="ch1.html">Lesson 1</a></li>
+	<li><a class="active" href="ch2.html">Lesson 2</a></li>
+</ul>
+	
+<div style="margin-left:200px;padding:1px 16px;">
 	<h3 class="center">第二講 脣音與雙音略碼 | Chapter 2: Labial Consonants and 1-2 Briefs</h3>
-	<h4>壹 編碼、讀音 | A. Yawei Codes and Readings</h4>
+	<h4>壹　編碼、讀音 | A. Yawei Codes and Readings</h4>
 <br>	
 <table>
 	<tr>
@@ -62,7 +91,7 @@
 </table>
 <br>	
 	<p>
-		提示：在本組聲碼中，除XBU之後需要加元音U，以與XB相區別外，其他聲碼之後不加元音自成音節。<br>
+		提示：在本組聲碼中，除<code>XBU</code>之後需要加元音<code>U</code>，以與<code>XB</code>相區別外，其他聲碼之後不加元音自成音節。<br>
 		NB: Each of the above codes has the default vowel '-u' assigned to it. As such, stroking <code>U</code> along with <code>B</code> 'b', <code>XB</code> 'm', or <code>GB</code> 'p' would be redundant, opening up <code>U</code> to be used as part of the initial consonant <code>XBU</code> 'f'. Note that should another vowel be stroked, this default vowel is dropped, as in <code>BA</code> 'ba' not *'bua'.
 	</p>
 	<br>
@@ -111,7 +140,7 @@
 	<h4>參 標點符號及標誌功能碼 | C. Punctuation and Functions</h4>
 	<h5>1. 句號（。）和逗號（，） | 1. Full-width period and comma</h5>
 	<p>
-		句號（。）和逗號（，）的編碼均爲DGI，用食指、中指、無名指平擊。其區別是，左手單擊爲句號，右手單擊爲逗號。所有標點符號均爲應單手單擊，不可與其他亞偉碼並擊。<br>
+		句號（。）和逗號（，）的編碼均爲<code>DGI</code>，用食指、中指、無名指平擊。其區別是，左手單擊爲句號，右手單擊爲逗號。所有標點符號均爲應單手單擊，不可與其他亞偉碼並擊。<br>
 		The full-width period and comma are both stroked using <code>DGI</code> (pointer, middle, and ring fingers pressing down on the top row), but on differing sides of the keyboard: the period is stroked on the left, and the comma on the right. Note, neither of these codes can be used in conjunction with other codes, i.e. they must be used on their own to output the punctuation correctly.
 	</p>
 	<div class="center">
