@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Yanheng Jig</title>
+	<link href="style.css" rel="stylesheet" type="text/css">
+	<script src="type-jig.js"></script>
+	<script src="steno-display.js"></script>
+	<script src="word-sets.js"></script>
+	<script src="plover-translations.js"></script>
+	<link rel="stylesheet" type="text/css" href="font-roboto.css">
+<style>
+	body {
+		margin: 0;
+	}
+	.center {
+		margin: auto;
+		width: 80%;
+		padding: 10px;
+	}
+	table, th, td {
+    	border: 1px solid black;
+	}
+	th, td {
+    	text-align: center;
+	}
+	p {
+		margin: auto;
+	}
+	#t1 {
+		-moz-tab-size: 4; /* Code for Firefox */
+		-o-tab-size: 4; /* Code for Opera 10.6-12.1 */
+		tab-size: 4;
+	}
+	ol {
+		padding: 20px;
+	}
+	.nav {
+	    list-style-type: none;
+	    margin: 0;
+	    padding: 0;
+	    width: 175px;
+	    background-color: #f1f1f1;
+	    position: fixed;
+	    height: 100%;
+	    overflow: auto;
+	}
+	li a {
+	    display: block;
+	    color: #000;
+	    padding: 8px 16px;
+	    text-decoration: none;
+	}
+	li a.active {
+		background-color: blue;
+    		color: white;
+	}
+	li a:hover:not(.active) {
+		background-color: #f1f1f1;
+		color: blue;
+	}
+}
+</style>
+</head>
+<body>
+	
+<ul class="nav">
+	<li><a href="index.html">Home</a></li>
+	<li><a class="active" href="preface.html">Preface</a></li>
+	<li><a href="ch1.html">Lesson 1</a></li>
+	<li><a href="ch2.html">Lesson 2</a></li>
+</ul>
+	
+<div style="margin-left:200px;padding:1px 16px;">
+	<h3 class="center">前言 亞偉速錄機的設計原則 | Preface: Yawei Steno overview</h3>
+
+	<h4>壹 亞偉碼的設計原則 | A. A Brief Look at Yawei Codes</h4>
+  <h5>1. 編碼方案 | Steno code overview</h5>
+  <p>
+    聲碼（即代表字音的鍵位碼）只有四個：<code>B<\code>、<code>D<\code>、<code>Z<\code>、<code>G<\code>，其餘的都是用這四個鍵位碼互相組合來構成的。總共21個聲碼如下：<br>
+  1. There are four so-called "consonant keys", namely <code>B</code>, <code>D</code>, <code>Z</code>, and <code>G</code>, which are used individually and in combination (with one exception) to form all 21 initial consonants of Mandarin, as shown below:
+</p>
+<br>
+  <table>
+    <tr>
+      <th>聲碼<br>Code</th><th>注音符號<br>Zhuyin</th><th>漢語拼音<br>Pinyin</th><th>例字<br>Example</th><th>聲碼<br>Code</th><th>注音符號<br>Zhuyin</th><th>漢語拼音<br>Pinyin</th><th>例字<br>Example</th><th>聲碼<br>Code</th><th>注音符號<br>Zhuyin</th><th>漢語拼音<br>Pinyin</th><th>例字<br>Example</th><th>聲碼<br>Code</th><th>注音符號<br>Zhuyin</th><th>漢語拼音<br>Pinyin</th><th>例字<br>Example</th>
+    </tr>
+    <tr>
+    <td><code>B</code<</td><td>ㄅ</td><td>b</td><td>不</td><td><code>BG</code></td><td>ㄆ</td><td>p</td><td>普</td><td><code>XB</code></td><td>ㄇ</td><td>m</td><td>木</td><td><code>XBU</code></td><td>ㄈ</td><td>f</td><td>福</td>
+    </tr>
+    <tr>
+    <td><code>D</code></td><td>ㄉ</td><td>d</td><td>的</td><td><code>BD</code></td><td>ㄊ</td><td>t</td><td>特</td><td><code>XBD</code></td><td>ㄋ</td><td>n</td><td>呢</td><td><code>XD</code></td><td>ㄌ</td><td>l</td><td>了</td>
+    </tr>
+    <tr>
+    <td><code>Z</code></td><td>ㄓ</td><td>zh</td><td>之</td><td><code>BZ</code></td><td>ㄔ</td><td>ch</td><td>吃</td><td><code>XZ</code></td><td>ㄕ</td><td>sh</td><td>是</td><td><code>XBZ</code></td><td>ㄖ</td><td>r</td><td>日</td>
+    </tr>
+    <tr>
+    <td><code>DZ</code></td><td>ㄗ</td><td>z</td><td>子</td><td><code>BDZ</code></td><td>ㄘ</td><td>c</td><td>此</td><td><code>XDZ</code>ㄙ</td><td>s</td><td>思</td>
+    </tr>
+    <tr>
+    <td><code>G</code></td><td>ㄍ</td><td>g</td><td>個</td><td><code>XBG</code></td><td>ㄎ</td><td>k</td><td>可</td><td><code>XG</code>ㄏ</td><td>h</td><td>和</td>
+    </tr>
+    <tr>
+    <td><code>GI</code>ㄐ</td><td>j</td><td>及</td><td><code>XGI</code>ㄑ</td><td>q</td><td>其</td><td><code>XI</code>ㄒ</td><td>x</td><td>系</td>
+    </tr>
+  </table>
+<br>
+<p>
+  2. 鍵位碼和指法 | Key positions and fingering
+  聲碼使用的鍵位碼主要是<code>X</code>、<code>B</code>、<code>D</code>、<code>Z</code>、<code>G</code>五個鍵位碼，個別用到<code>I</code>和<code>U</code>的聲碼，這些都是排列在前面的鍵位碼。構成聲碼的鍵位碼主要靠拇指和食指來進行擊打，有個別聲碼用到中指。<br>
+  The consonant codes primarily use the keys <code>X</code>, <code>B</code>, <code>D</code>, <code>Z</code>, and <code>G</code>, with some initial consonants also requiring the addition of <code>I</code> and <code>U</code>. As these represent the initial consonant of a syllable, they are written at the beginning of the code. These codes are input primarily using the thumb and pointer finger, with some requiring the additional use of the middle finger.
+</p>
+<br>
+<h4>貳 亞偉碼韻碼的設計原則 | B. Yawei Rime Codes</h4>
+<p>
+  全部34個韻碼如下：<br>
+  The 34 rime codes used to represent all the vowels and vowel-coda combinations of Mandarin are shown below.
+</p>
+<br>
+  <table>
+    <tr>
+      <th>聲碼<br>Code</th><th>注音符號<br>Zhuyin</th><th>漢語拼音<br>Pinyin</th><th>例字<br>Example</th><th>聲碼<br>Code</th><th>注音符號<br>Zhuyin</th><th>漢語拼音<br>Pinyin</th><th>例字<br>Example</th><th>聲碼<br>Code</th><th>注音符號<br>Zhuyin</th><th>漢語拼音<br>Pinyin</th><th>例字<br>Example</th><th>聲碼<br>Code</th><th>注音符號<br>Zhuyin</th><th>漢語拼音<br>Pinyin</th><th>例字<br>Example</th>
+    </tr>
+    <tr>
+      <td><code>I</code></td><td>ㄧ</td><td>(y)i</td><td>以</td><td><code>U</code></td><td>ㄨ</td><td>(w)u</td><td>無</td><td><code>IU</code></td><td>ㄩ</td><td>(y)ü</td><td>與</td><td><code>N</code></td><td>ㄣ</td><td>en</td><td>恩</td>
+    </tr>
+    <tr>
+      <td><code>E</code></td><td>ㄜ/ㄟ</td><td>e/ei</td><td>額、誒</td><td><code>NE</code></td><td>ㄥ</td><td>eng</td><td>鞥</td><td><code>A</code></td><td>ㄚ</td><td>a</td><td>阿</td><td><code>O</code></td><td>ㄛ/ㄨㄛ</td><td>(w)o</td><td>喔、我</td>
+    </tr>
+    <tr>
+      <td><code>AO</code></td><td>ㄠ</td><td>ao</td><td>奧</td><td><code>AN</code></td><td>ㄢ</td><td>an</td><td>安</td><td><code>OU</code></td><td>ㄡ</td><td>ou</td><td>歐</td><td><code>IN</code></td><td>ㄧㄣ</td><td>(y)in</td><td>因</td>
+    </tr>
+    <tr>
+      <td><code>UE</code></td><td>ㄨㄟ</td><td>wei/-ui</td><td>爲</td><td><code>IA</code></td><td>ㄧㄚ</td><td>ya/-ia</td><td>壓</td><td><code>NO</code></td><td>ㄤ</td><td>ang</td><td>昂</td><td><code>IO</code></td><td>ㄞ</td><td>ai</td><td>愛</td>
+    </tr>
+    <tr>
+      <td><code>IE</code></td><td></td><td>ㄧㄝ</td><td>ye/-ie</td><td>也</td><td><code>EA</code></td><td>ㄧㄛ</td><td>yo</td><td>喲</td><td><code>XE</code></td><td>ㄦ</td><td>er</td><td>而</td><td><code>UN</code></td><td>ㄨㄣ</td><td>wen/-un</td><td>問</td>
+    </tr>
+    <tr>
+      <td><code>UA</code></td><td>ㄨㄚ</td><td>wa/-ua</td><td>挖</td><td><code>UIO</code></td><td>ㄨㄞ</td><td>wai/-uai</td><td>外</td><td><code>INE</code></td><td>ㄧㄥ</td><td>(y)ing</td><td>應</td><td><code>IUE</code></td><td>ㄩㄝ</td><td>(y)üe</td><td>月</td>
+    </tr>
+    <tr>
+      <td><code>IUN</code></td><td>ㄩㄣ</td><td>(y)ün</td><td>雲</td><td><code>IAO</code></td><td>ㄧㄠ</td><td>yao/-iao</td><td>要</td><td><code>INA</code></td><td>ㄧㄢ</td><td>yan/-ian</td><td>言</td><td><code>UEO</code></td><td>ㄨㄥ</td><td>weng/-ong</td><td>翁</td>
+    </tr>
+    <tr>
+      <td><code>IUEO</code></td><td>ㄩㄥ</td><td>yong/-iong</td><td>用</td><td><code>IEO</code></td><td>ㄧㄡ</td><td>you/-iu</td><td>有</td><td><code>INO</code></td><td>ㄧㄤ</td><td>yang/-iang</td><td>樣</td><td><code>UNO</code></td><td>ㄨㄤ</td><td>wang/-uang</td><td>王</td>
+    </tr>
+    <tr>
+      <td><code>UAN</code></td><td>ㄨㄢ</td><td>wan/-uan</td><td>萬</td><td><code>IUAN</code></td><td>ㄩㄢ</td><td>yuan/-üan</td><td>圓</td>
+    </tr>
+  </table>
+<br>
+<p>
+  提示：<br>
+  （1）與英文字母發音很接近的韻碼有16個，即<code>I</code>（ㄧ）、<code>U</code>（ㄨ）、<code>E</code>（ㄜ、ㄟ）、<code>A</code>（ㄚ）、<code>O</code>（ㄛ）、<code>N</code>（ㄣ）、<code>IN</code>（ㄧㄣ）、<code>AN</code>（ㄢ）、<code>IA</code>（ㄧㄚ）、<code>IAN</code>（ㄧㄚ）〔其實是<code>INA</code>，但<code>IAN</code>此順序較好記住〕、<code>AO</code>（ㄠ）、<code>IAO</code>（ㄧㄠ）、<code>IE</code>（ㄧㄝ）、<code>UN</code>（ㄨㄣ）、<code>UAN</code>（ㄨㄢ）、<code>UA（ㄨㄚ）。這些韻碼無需特別記憶。<br>
+  （2）與英文字母發音有稍微不同的韻碼有2兩個，即<code>UE</code>（ㄨㄟ）和<code>IU（ㄩ）</code>，利用IU還可以構成<code>IUN</code>（ㄩㄣ）、<code>IUE</code>（ㄩㄝ）和<code>IUAN</code>（ㄩㄢ）。這5個韻碼，只要理解其構成原理，亦無需記憶。<br>
+（3）需要加以記憶的只有8個：<code>NE</code>(ㄥ）、<code>INE</code>（ㄧㄥ）、<code>IO</code>（ㄞ）、<code>NO</code>（ㄤ）、<code>EO</code>（ㄡ）、<code>UEO</code>（ㄨㄥ）、<code>XE</code>（ㄦ）和<code>EA</code>（ㄧㄛ）。<br>
+（4）其他的韻碼可以用上面的韻碼加以組合構成：<code>UIO</code>（ㄨㄞ）、<code>INO</code>（ㄧㄤ）、<code>UNO</code>（ㄧㄤ）、<code>IEO</code>（ㄧㄡ）、<code>IUEO</code>（ㄩㄥ）、<code>。只要掌握了上面的韻碼，這5個韻碼也無需特別記憶便能掌握。<br>
+NB:
+(1) For those already familiar with Hanyu Pinyin, fifteen of the above rime codes will appear instantly recognizable, namely <code>I</code>, <code>U</code>, <code>E</code>, <code>A</code>, <code>O</code>, <code>IN</code>, <code>AN</code>, <code>IA</code>, <code>INA</code>(="-ian", but with the order of <code>A</code> and <code>N</code> flipped), <code>AO</code>, <code>IAO</code>, <code>IE</code>, <code>UN</code>, <code>UAN</code>, and <code>UA</code>.<br>
+(2) Two of the above rime codes represent slight departures from Hanyu Pinyin, namely <code>UE</code> (wei) and <code>IU</code> (yu), the latter of which is also used in combination with other endings, giving <code>IUN</code> (yun), <code>IUE</code> (yue), and <code>IUAN</code> (yuan). One need only remember this rule for these rime, no other memorization necessary.<br>
+(3) The remainder of the codes do require some amount of memorization/familiarization, as <code>N</code>(en), <code>NE</code> (eng), <code>INE</code> (ying), <code>IO</code>(ai), <code>NO</code> (ang), <code>EO</code> (yo), <code>UEO</code> (weng), <code>XE</code>(er), and <code>EA</code> (ya) are (in some cases) significant departures from Hanyu Pinyin.<br>
+(4) Having memorized the above, learning the codes which use them becomes relatively easy, as the rest merely add U for "w-"or I for "y-" to the beginning, giving <code>UIO</code> (wai), <code>INO</code> (yang), <code>UNO</code> (wang), <code>IEO</code> (you), <code>IUEO</code> (yong).
+
+</p>
+</div>
+</body>
+</html>
