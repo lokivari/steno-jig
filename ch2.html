@@ -10,17 +10,33 @@
 	<script src="plover-translations.js"></script>
 	<link rel="stylesheet" type="text/css" href="font-roboto.css">
 <style>
+	.center {
+		margin: auto;
+		width: 80%;
+		padding: 10px;
+	}
+	div {
+		margin: 10px 100px;
+	}
 	table, th, td {
     	border: 1px solid black;
 	}
 	th, td {
     	text-align: center;
 	}
-	.center {
-	margin: auto;
-	width: 60%;
-	border: 2px solid;
-	padding: 10px;
+	p {
+		margin: auto;
+	}
+	#t1 {
+		-moz-tab-size: 4; /* Code for Firefox */
+		-o-tab-size: 4; /* Code for Opera 10.6-12.1 */
+		tab-size: 4;
+	}
+	ol {
+		padding: 20px;
+	}
+	ul {
+		margin: 10px 10px 10px 100px
 	}
 </style>
 </head>
@@ -28,7 +44,7 @@
 
 <div id="lesson">
 	<h3 class="center">第二講 脣音與雙音略碼 | Chapter 2: Labial Consonants and 1-2 Briefs</h3>
-	<h4>壹 編碼、讀音、指法 | A. Yawei Codes and Readings</h4>
+	<h4>壹 編碼、讀音 | A. Yawei Codes and Readings</h4>
 <br>	
 <table>
 	<tr>
@@ -45,7 +61,7 @@
 	</tr>
 </table>
 <br>	
-	<p class="wrapper">
+	<p>
 		提示：在本組聲碼中，除XBU之後需要加元音U，以與XB相區別外，其他聲碼之後不加元音自成音節。<br>
 		NB: Each of the above codes has the default vowel '-u' assigned to it. As such, stroking <code>U</code> along with <code>B</code> 'b', <code>XB</code> 'm', or <code>GB</code> 'p' would be redundant, opening up <code>U</code> to be used as part of the initial consonant <code>XBU</code> 'f'. Note that should another vowel be stroked, this default vowel is dropped, as in <code>BA</code> 'ba' not *'bua'.
 	</p>
@@ -53,7 +69,7 @@
 	<h4>貳 略碼和中文字特定碼 | B. Briefs and Specific Character Codes</h4>
 	<br>
 	<h5>1. 略碼 | 1. Briefs</h5>
-	<p class="wrapper">
+	<p>
 		所謂「略碼」是指詞語碼不是全拼式的，而是以擊打略碼標誌功能碼<code>-X</code>或<code>-W</code>或<code>X-X</code>或<code>-XO</code>來略去其中的音節碼的編碼。（「<code>-</code>」爲分隔線，像「<code>X-</code>」表示左手打<code>X</code>鍵。）略碼詞語的含義均爲固定的，即不通用同音詞語。一般常用的雙音略碼詞語，其具體的略打方法如下：
 		<br>
 		"Briefs" refer to codes that do not fully spell out a phrase, but rather use <code>-X</code>, <code>-W</code>, <code>X-X</code>, or <code>-XO</code> to replace some part of the phrase. (NB: A <code>-</code> is used to mark the center of the keyboard, so that <code>X-</code> refers to keying <code>X</code> on the left side.) The assignment of briefs is predetermined, and here is the format for 1-2 briefs (so called because one syllable is used stroked in order to output a two syllable phrase):
@@ -66,7 +82,7 @@
 	</p>
 	</div>
 
-	<p class="wrapper">
+	<p>
 		左手擊打詞語的前一個音節碼，右手同時並擊省略標誌功能碼X或W，表示省略該雙音詞語的後一個中文字。現已編定一批略碼，存入詞庫。本講結合所學聲碼先介紹4對（共8個）常用雙音略碼詞語：<br>
 		On the left hand, stroke the code for the first syllable; on the right hand, stroke -X or -W at the same time, which replaces the second syllable of the phrase. A number of briefs have been assigned to the dictionary file, below are four such pairs of briefs based on the above intial consonants:
 	</p>
@@ -79,7 +95,7 @@
 		</tr>
 	</table>
 	<h5>2. 中文字特定碼 | 2. Specific Character Codes</h5>
-	<p class="wrapper>
+	<p>
 		所謂「中文字特定碼」是指爲某些高頻中文字所特別編定的碼，即在音節碼內同時加擊一個特定標誌功能碼<code>W</code>，標誌此音節碼所代表的是特定的中文字。<br>
 		The term "Specific Character Code" refers to codes that allow the typist to output a particular character, rather than stroking the pronunciation of the character. These codes generally make use of the function key <code>W</code>, which may replace some part of the phonetic code.<br>
 		這裡結合所學聲碼先介紹中文小寫數字「八」的特定碼及其有關的雙音略碼詞語：<br>
@@ -87,21 +103,21 @@
 	</p>
 	<div class="center">
 	<p>
-		<code>BW</code>:八<br>
-		<code>BW-W</code>:八月
+		<code>BW</code> : 八<br>
+		<code>BW-W</code> : 八月
 	</p>
 	</div>
 
 	<h4>參 標點符號及標誌功能碼 | C. Punctuation and Functions</h4>
 	<h5>1. 句號（。）和逗號（，） | 1. Full-width period and comma</h5>
-	<p class="wrapper">
+	<p>
 		句號（。）和逗號（，）的編碼均爲DGI，用食指、中指、無名指平擊。其區別是，左手單擊爲句號，右手單擊爲逗號。所有標點符號均爲應單手單擊，不可與其他亞偉碼並擊。<br>
 		The full-width period and comma are both stroked using <code>DGI</code> (pointer, middle, and ring fingers pressing down on the top row), but on differing sides of the keyboard: the period is stroked on the left, and the comma on the right. Note, neither of these codes can be used in conjunction with other codes, i.e. they must be used on their own to output the punctuation correctly.
 	</p>
 	<div class="center">
 	<p>
-		<code>DGI-</code>:。<br>
-		<code>-DGI</code>:，
+		<code>DGI-</code> : 。<br>
+		<code>-DGI</code> : ，
 	</p>
 	</div>
 
@@ -109,7 +125,11 @@
 	<table>
 		<tr>
 			<th><code>-X</code><td>空格標誌功能碼，右手單擊，表示空出一個字碼格。<br>Stroked on the right hand, this adds a single space.</td>
+		</tr>
+		<tr>
 			<th><code>-XBW</code><td>換行空格標誌功能碼，右手單擊，表示另起一行，並自動留出兩個字的空格。如連擊兩次，則在換行時空一行，依此類推。<br>Adds a new line and indents two spaces in the new line. Successive uses continually adds new lines.</td>
+		</tr>
+		<tr>
 			<th><code>XBW-</code><td>換行頂格標誌功能碼，左手單擊，表示另起一行，頂格，不留出空格。「空行」的操作方法，同上述。<br>Adds a new line without indenting on the next line.</td>
 		</tr>
 	</table>
