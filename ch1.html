@@ -10,13 +10,17 @@
 	<script src="plover-translations.js"></script>
 	<link rel="stylesheet" type="text/css" href="font-roboto.css">
 <style>
+	body {
+		margin: 0;
+	}
 	.center {
 		margin: auto;
 		width: 80%;
 		padding: 10px;
 	}
 	div {
-		margin: 10px 100px;
+		margin-left:25%;
+		padding:1px 16px;
 	}
 	table, th, td {
     	border: 1px solid black;
@@ -35,14 +39,45 @@
 	ol {
 		padding: 20px;
 	}
-	ul {
-		margin: 10px 10px 10px 100px
+	.nav {
+	    list-style-type: none;
+	    margin: 0;
+	    padding: 0;
+	    width: 25%;
+	    background-color: #f1f1f1;
+	    position: fixed;
+	    height: 100%;
+	    overflow: auto;
+	}
+
+	li a {
+	    display: block;
+	    color: #000;
+	    padding: 8px 16px;
+	    text-decoration: none;
+	}
+
+	li a.active {
+		background-color: blue;
+    		color: white;
+	}
+
+	li a:hover:not(.active) {
+		background-color: #f1f1f1;
+		color: blue;
 	}
 }
 </style>
 </head>
 <body>
-
+	
+<ul style="nav">
+	<li><a href="index.html">Home</a></li>
+	<li><a href="preface.html">Preface</a></li>
+	<li><a class="active" href="ch1.html">Lesson 1</a></li>
+	<li><a href="ch2.html">Lesson 2</a></li>
+</ul>
+	
 <div id="lesson">
 	<h3 class="center">亞偉速錄 第一講：亞偉速錄鍵位分佈、指法 | Yawei Chapter 1: The Keys and their Positions</h3>
 
@@ -123,12 +158,12 @@ X	B	D	Z	G	W	I	U	N	E	A	O
 </div>
 
 <div class="form-section">
-		<div class="caption">第一講練習 (暫未開放）| Chapter one exercises. (placeholder)</div>
-		<ul>
-			<li><a href="drills/ch1-SingleKeys.html">Single keys (with hints).</a></li>
-			<li><a href="form.html?drill=Yanheng-single-keys&type=randomly&timeLimit=5&hints=false">Single keys for five minutes (no hints).</a></li>
-			<li><a href="form.html?drill=WordSets.Ch1-words&type=randomly&timeLimit=5&hints=true">Two character phrases (one key on each hand) with hints.</a></li>
-			<li><a href="form.html?drill=WordSets.Ch1-words&type=randomly&timeLimit=5&hints=true">Two character phrases (one key on each hand), no hints.</a></li>
+	<div class="caption">第一講練習 (暫未開放）| Chapter one exercises. (placeholder)</div>
+	<ul>
+		<li><a href="form.html?drill=Yanheng-single-keys&type=randomly&timeLimit=5&hints=true">Single keys (with hints).</a></li>
+		<li><a href="form.html?drill=Yanheng-single-keys&type=randomly&timeLimit=5">Single keys for five minutes (no hints).</a></li>
+		<li><a href="form.html?drill=WordSets.Ch1-words&type=randomly&timeLimit=5&hints=true">Two character phrases (one key on each hand) with hints.</a></li>
+		<li><a href="form.html?drill=WordSets.Ch1-words&type=randomly&timeLimit=5&">Two character phrases (one key on each hand), no hints.</a></li>
 </div>
 </body>
 </html>
