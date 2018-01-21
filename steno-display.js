@@ -175,10 +175,10 @@ StenoDisplay.Stroke = function(container) {
 
 	upperCells[5].className = 'alt';
 
-	bottomCells[0].colSpan = 2;
+	bottomCells[0].colSpan = 3;
 	bottomCells[1].className = 'bottomLeft';
 	bottomCells[2].className = 'bottomLeft';
-	bottomCells[3].colSpan = 2;
+	bottomCells[3].colSpan = 1;
 	bottomCells[4].className = 'bottomRight';
 	bottomCells[5].className = 'bottomRight';
 
@@ -193,7 +193,7 @@ StenoDisplay.Stroke = function(container) {
 	this.rightCells = {
 		':': upperCells[5], D: upperCells[6], G: upperCells[7], I: upperCells[8], N: upperCells[9], A: upperCells[10],
 		                    Z: lowerCells[5], W: lowerCells[6], U: lowerCells[7], E: lowerCells[8], O: lowerCells[9],
-		X: bottomCells[4], B: bottomCells[5]
+				    X: bottomCells[4], B: bottomCells[5]
 	};
 
 }
@@ -274,8 +274,8 @@ var rightFromPseudo = {
 	'E': 'E', 'A': 'A', 'O': 'O'
 	};
 
-var left_re = /D|Z|G|W|I|U|N|E|A|O/g;
-var right_re = /D|Z|G|W|I|U|N|E|A|O/g;
+var left_re = /X|B|D|Z|G|W|I|U|N|E|A|O/g;
+var right_re = /X|B|D|Z|G|W|I|U|N|E|A|O/g;
 var separation_re = /([^-]*)([*-][*-]*|)(.*)/;
 
 function pseudoStrokeToSteno(stroke) {
