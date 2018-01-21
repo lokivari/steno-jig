@@ -275,7 +275,6 @@ function removeClassFromAllPropertiesOf(obj, className) {
  	'AY': 'AEU'
 	};
  var rightFromPseudo = {
- var rightFromPseudo = {
 	'TH': '*T', 'CH': 'FP', 'SH': 'RB', 'RCH': 'FRPB',
 	'N': 'PB', 'NG': 'PBG', 'NK': 'PBG',
 	'M': 'PL', 'K': 'BG', 'SHN': 'GS', 'KSHN': 'BGS',
