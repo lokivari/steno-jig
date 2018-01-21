@@ -276,7 +276,7 @@ var rightFromPseudo = {
 
 var left_re = /X|B|D|Z|G|W|I|U|N|E|A|O/g;
 var right_re = /X|B|D|Z|G|W|I|U|N|E|A|O/g;
-var separation_re = /([^-]*)(-)(.*)/;
+var separation_re = /([^-]*)(-|)(.*)/;
 
 function pseudoStrokeToSteno(stroke) {
 	match = separation_re.exec(stroke);
