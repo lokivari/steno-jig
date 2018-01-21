@@ -218,14 +218,14 @@ StenoDisplay.Stroke.prototype.set = function(stroke, separator) {
 	this.clear();
 	this.separator.firstChild.nodeValue = separator || '';
 	var steno = pseudoStrokeToSteno(stroke);
-	var left = steno[0], vowel = steno[1], right = steno[2];
+	var left = steno[1], vowel = steno[0], right = steno[2];
 	for(var i=0; i<left.length; ++i) {
 		addClass(this.leftCells[left.charAt(i)], 'pressed');
 	}
 	for(var i=0; i<right.length; ++i) {
 		addClass(this.rightCells[right.charAt(i)], 'pressed');
 	}
-	for(var i=0; i<left.length; ++i) {
+	for(var i=0; i<vowel.length; ++i) {
 		addClass(this.vowelCells[vowel.charAt(i)], 'pressed');
 	}
 }
@@ -265,33 +265,31 @@ function removeClassFromAllPropertiesOf(obj, className) {
 // ---------------------------------------------------------------------
 
 var leftFromPseudo = {
-	'X': 'X', 'B': 'B',
 	'D': 'D', 'Z': 'Z', 'G': 'G', 'W': 'W',
 	'I': 'I', 'U': 'U', 'N': 'N',
 	'E': 'E', 'A': 'A', 'O': 'O'
 	};
 var vowelFromPseudo = {
-	'Y': 'Y'
+	'X': 'X', 'B': 'B'
 	};
 var rightFromPseudo = {
-	'X': 'X', 'B': 'B',
 	'D': 'D', 'Z': 'Z', 'G': 'G', 'W': 'W',
 	'I': 'I', 'U': 'U', 'N': 'N',
 	'E': 'E', 'A': 'A', 'O': 'O'
 	};
 
-var left_re = /X|B|D|Z|G|W|I|U|N|E|A|O/g;
-var vowel_re = /Y/g;
+var left_re = /D|Z|G|W|I|U|N|E|A|O/g;
+var vowel_re = /X|B/g;
 var right_re = /D|Z|G|W|I|U|N|E|A|O/g;
 var separation_re = /([^-]*)([*-][*-]*|)(.*)/;
 
 function pseudoStrokeToSteno(stroke) {
 	match = separation_re.exec(stroke);
-	var b = match[1], v = match[2], e = match[3];
+	var b = match[2], v = match[1], e = match[3];
 	var left = b.replace(left_re, function(m) { return leftFromPseudo[m] || m; });
 	var vowel = v.replace(vowel_re, function(m) { return vowelFromPseudo[m] || m; });
 	var right = e.replace(right_re, function(m) { return rightFromPseudo[m] || m; });
-	return [left, vowel, right];
+	return [vowel, left, right];
 }
 
 
