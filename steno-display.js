@@ -271,7 +271,7 @@ var leftFromPseudo = {
 	'E': 'E', 'A': 'A', 'O': 'O'
 	};
 var vowelFromPseudo = {
-	'X': 'X', 'B': 'B'
+	'Y': 'Y'
 	};
 var rightFromPseudo = {
 	'X': 'X', 'B': 'B',
@@ -281,7 +281,7 @@ var rightFromPseudo = {
 	};
 
 var left_re = /X|B|D|Z|G|W|I|U|N|E|A|O/g;
-var vowel_re = /X|B/g;
+var vowel_re = /Y/g;
 var right_re = /D|Z|G|W|I|U|N|E|A|O/g;
 var separation_re = /([^-]*)([*-][*-]*|)(.*)/;
 
