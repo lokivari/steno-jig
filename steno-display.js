@@ -265,23 +265,23 @@ function removeClassFromAllPropertiesOf(obj, className) {
 // ---------------------------------------------------------------------
 
 var leftFromPseudo = {
-	'X': 'X', 'B': 'B', 'D': 'D', 'Z': 'Z', 'G': 'G',
+	'D': 'D', 'Z': 'Z', 'G': 'G',
 	'W': 'W', 'I': 'I', 'U': 'U', 'N': 'N',
 	'E': 'E', 'A': 'A', 'O': 'O'
 	};
 var vowelFromPseudo = {
-	'AY': 'AEU'
+	'X': 'X', 'B': 'B'
 	};
 var rightFromPseudo = {
-	'X': 'X', 'B': 'B', 'D': 'D', 'Z': 'Z', 'G': 'G',
+	'D': 'D', 'Z': 'Z', 'G': 'G',
 	'W': 'W', 'I': 'I', 'U': 'U', 'N': 'N',
 	'E': 'E', 'A': 'A', 'O': 'O'
 	};
 
-var left_re = /X|B|D|Z|G|W|I|U|N|E|A|O/g;
-var vowel_re = /0|1|2|3|4|5|6|7|8|9/g;
-var right_re = /X|B|D|Z|G|W|I|U|N|E|A|O/g;
-var separation_re = /([^AOEUI*-]*)([AO*EUI-][AO*EUI-]*|)(.*)/;
+var left_re = /D|Z|G|W|I|U|N|E|A|O/g;
+var vowel_re = /B|X/g;
+var right_re = /D|Z|G|W|I|U|N|E|A|O/g;
+var separation_re = /([^-]*)([*-][*-]*|)(.*)/;
 
 function pseudoStrokeToSteno(stroke) {
 	match = separation_re.exec(stroke);
