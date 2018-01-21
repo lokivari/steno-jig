@@ -279,7 +279,7 @@ var rightFromPseudo = {
 	};
 
 var left_re = /D|Z|G|W|I|U|N|E|A|O/g;
-var vowel_re = /B|X/g;
+var vowel_re = /X|B/g;
 var right_re = /D|Z|G|W|I|U|N|E|A|O/g;
 var separation_re = /([^-]*)([*-][*-]*|)(.*)/;
 
