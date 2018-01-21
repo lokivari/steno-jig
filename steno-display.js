@@ -225,7 +225,7 @@ StenoDisplay.Stroke.prototype.set = function(stroke, separator) {
 	for(var i=0; i<right.length; ++i) {
 		addClass(this.rightCells[right.charAt(i)], 'pressed');
 	}
-	for(var i=0; i<vowel.length; ++i) {
+	for(var i=0; i<left.length; ++i) {
 		addClass(this.vowelCells[vowel.charAt(i)], 'pressed');
 	}
 }
@@ -265,6 +265,7 @@ function removeClassFromAllPropertiesOf(obj, className) {
 // ---------------------------------------------------------------------
 
 var leftFromPseudo = {
+	'X': 'X', 'B': 'B',
 	'D': 'D', 'Z': 'Z', 'G': 'G', 'W': 'W',
 	'I': 'I', 'U': 'U', 'N': 'N',
 	'E': 'E', 'A': 'A', 'O': 'O'
@@ -273,12 +274,13 @@ var vowelFromPseudo = {
 	'X': 'X', 'B': 'B'
 	};
 var rightFromPseudo = {
+	'X': 'X', 'B': 'B',
 	'D': 'D', 'Z': 'Z', 'G': 'G', 'W': 'W',
 	'I': 'I', 'U': 'U', 'N': 'N',
 	'E': 'E', 'A': 'A', 'O': 'O'
 	};
 
-var left_re = /D|Z|G|W|I|U|N|E|A|O/g;
+var left_re = /X|B|D|Z|G|W|I|U|N|E|A|O/g;
 var vowel_re = /X|B/g;
 var right_re = /D|Z|G|W|I|U|N|E|A|O/g;
 var separation_re = /([^-]*)([*-][*-]*|)(.*)/;
@@ -289,7 +291,7 @@ function pseudoStrokeToSteno(stroke) {
 	var left = b.replace(left_re, function(m) { return leftFromPseudo[m] || m; });
 	var vowel = v.replace(vowel_re, function(m) { return vowelFromPseudo[m] || m; });
 	var right = e.replace(right_re, function(m) { return rightFromPseudo[m] || m; });
-	return [vowel, left, right];
+	return [left, vowel, right];
 }
 
 
