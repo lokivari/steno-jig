@@ -276,11 +276,11 @@ var rightFromPseudo = {
 
 var left_re = /X|B|D|Z|G|W|I|U|N|E|A|O/g;
 var right_re = /X|B|D|Z|G|W|I|U|N|E|A|O/g;
-var separation_re = /([^-]*)(-|)(.*)/;
+var separation_re = /([^-]*)([-]|)(.*)/;
 
 function pseudoStrokeToSteno(stroke) {
 	match = separation_re.exec(stroke);
-	var b = match[1], e = match[3];
+	var b = match[1], e = match[2];
 	var left = b.replace(left_re, function(m) { return leftFromPseudo[m] || m; });
 	var right = e.replace(right_re, function(m) { return rightFromPseudo[m] || m; });
 	return [left, right];
