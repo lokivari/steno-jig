@@ -161,6 +161,7 @@ TypeJig.Translations.Plover = {
 	"副鋪": "XBU-BG",
 	"父母": "XBU-XB",
 	"幕府": "XB-XBU",
+	"幕布": "XB-B",
 	"瀑布": "BG-B",
 	"布鋪": "B-BG",
 	"得不": "D-B",
