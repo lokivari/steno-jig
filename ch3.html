@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Yanheng Jig</title>
+	<link href="style.css" rel="stylesheet" type="text/css">
+	<script src="type-jig.js"></script>
+	<script src="steno-display.js"></script>
+	<script src="word-sets.js"></script>
+	<script src="plover-translations.js"></script>
+	<link rel="stylesheet" type="text/css" href="font-roboto.css">
+<style>
+	body {
+		margin: 0;
+	}
+	.center {
+		margin: auto;
+		width: 80%;
+		padding: 10px;
+	}
+	table, th, td {
+    	border: 1px solid black;
+	}
+	th, td {
+    	text-align: center;
+	}
+	p {
+		margin: auto;
+	}
+	#t1 {
+		-moz-tab-size: 4; /* Code for Firefox */
+		-o-tab-size: 4; /* Code for Opera 10.6-12.1 */
+		tab-size: 4;
+	}
+	ol {
+		padding: 20px;
+	}
+	.nav {
+	    list-style-type: none;
+	    margin: 0;
+	    padding: 0;
+	    width: 175px;
+	    background-color: #f1f1f1;
+	    position: fixed;
+	    height: 100%;
+	    overflow: auto;
+	}
+	li a {
+	    display: block;
+	    color: #000;
+	    padding: 8px 16px;
+	    text-decoration: none;
+	}
+	li a.active {
+		background-color: blue;
+    		color: white;
+	}
+	li a:hover:not(.active) {
+		background-color: #f1f1f1;
+		color: blue;
+	}
+}
+</style>
+</head>
+<body>
+	
+<ul class="nav">
+	<li><a href="index.html">Home</a></li>
+	<li><a href="preface.html">Preface</a></li>
+	<li><a href="ch1.html">Lesson 1</a></li>
+  <li><a href="ch2.html">Lesson 2</a></li>
+	<li><a class="active" href="ch3.html">Lesson 3</a></li>
+</ul>
+	
+<div style="margin-left:200px;padding:1px 16px;">
+	<h3 class="center">第三講 舌尖音與三音略碼 | Chapter 3: Coronal Consonants and 3-Character Briefs</h3>
+	<h4>壹　編碼、讀音 | A. Yawei Codes and Readings</h4>
+<br>	
+<table>
+	<tr>
+		<th>亞偉碼<br>Yawei Code</th><td><code>D</code></td><td><code>BD</code></td><td><code>XBD</code></td><td><code>XDBU</code></td>
+	</tr>
+	<tr>
+		<th>注音符號<br>Zhuyin</th><td>ㄉㄜ</td><td>ㄊㄜ</td><td>ㄋㄜ</td><td>ㄌㄜ</td>
+	</tr>
+	<tr>
+		<th>漢語拼音<br>Pinyin</th><td>de</td><td>te</td><td>ne</td><td>le</td>
+	</tr>
+	<tr>
+		<th>例字<br>Example</th><td>的</td><td>特</td><td>呢</td><td>了</td>
+	</tr>
+</table>
+<br>	
+	<br>
+	<h4>貳 略碼 | B. Briefs</h4>
+	<br>
+	<h5>1. 雙音略碼詞語 | 1. 1-2 Briefs</h5>
+  <br>
+	<table>
+		<tr>
+			<th>[首音節碼]<code>-X</code><br>[1st syl.]<code>-X</code></th><td>得到</td><td>特點</td><td>樂趣</td>	
+		</tr>
+		<tr>
+			<th>[首音節碼]<code>-X</code><br>[1st syl.]<code>-W</code></th><td>德國</td><td>特別</td><td>樂觀</td>
+		</tr>
+	</table>
+	<h5>2. 三音略碼詞語 | 2. 3-Character Briefs</h5>
+	<p>
+		常用三音詞語的具體略打方法是：<br>
+    Briefs for common three-character phrases are as follows:
+  </p>
+    <div class="center">
+    <p>
+      [首音節碼]<code>/X-X</code>
+      [1st syl.]<code>/X-X</code>
+    </p>
+    </div>
+  <p>
+  先用左或右手單擊三音詞語開頭的音節碼，後兩個音節碼用左、有兩手同時並擊省略標誌功能碼<code>X-X</code>來略打。現已編定一批三音略碼，存入詞庫。這裡先介紹12個。<br>
+  To stroke a three-character brief, begin by stroking the the first syllable of the phrase on either the right or left hand, then follow up by stroking <code>X-X</code>. Below are 12 such briefs using the initial consonants introduced thus far.<br>
+  </p>
+  <p>
+  阿拉伯	以色列	革命化	無線電	得罪人
+  指戰員	不能不	普遍性	服務員	穆斯林
+  特別是	樂天派
+  </p>
+
+div class="form-section">
+		<div class="caption">Chapter three exercises.</div>
+		<ul>
+			<li><a href="form.html?drill=Ch3initials&type=randomly&timeLimit=5&hints=true">Two character phrases [dtnl] with hints.</a></li>
+			<li><a href="form.html?drill=Ch3initials&type=randomly&timeLimit=5">Two character phrases [dtnl] (no hints).</a></li>
+      			<li><a href="form.html?drill=Ch3briefs&type=randomly&timeLimit=5&hints=true">Chapter 3 briefs and punctuation with hints.</a></li>
+      			<li><a href="form.html?drill=Ch3briefs&type=randomly&timeLimit=5">Chapter 3 briefs and punctuation, no hints.</a></li>
+      			<li><a href="form.html?drill=Ch3initial&Ch3briefs&Ch3additional&type=randomly&timeLimit=5&hints=true">Comprehensive practice with hints.</a></li>
+      			<li><a href="form.html?drill=Ch3initial&Ch3briefs&Ch3additional&type=randomly&timeLimit=5">Comprehensive practice, no hints.</a></li>
+		</ul>
+		</div>
+</div>
+</body>
+</html>
