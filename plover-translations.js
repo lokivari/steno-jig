@@ -256,6 +256,8 @@ TypeJig.Translations.Plover = {
 	"穆斯林": "XB/X-X",
 	"特別是": "BD/X-X",
 	"樂天派": "XD/X-X",
+	"木": "XB",
+	"一個五個": "I-G/U-G",
 	"。": "DGI",
 	"，": "-DGI"
 };
