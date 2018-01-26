@@ -261,12 +261,13 @@ TypeJig.Translations.Plover = {
 	"日式": "XBZ-XZ",
 	"知母": "Z-XB",
 	"之特": "Z-BD",
-	"之呢": "XBDI-XBD",
+	"之呢": "Z-XBD",
 	"指了": "Z-XD",
 	"吃不": "BZ-B",
 	"吃鋪": "BZ-BG",
 	"遲暮": "BZ-XB",
 	"尺幅": "BZ-XBU",
+	"扶持": "XBU-BZ",
 	"吃得": "BZ-D",
 	"吃特": "BZ-BD",
 	"吃了": "BZ-XD",
@@ -296,6 +297,7 @@ TypeJig.Translations.Plover = {
 	"吃不上": "BZ/X-X",
 	"事實上": "XZ/X-X",
 	"日用品": "XBZ/X-X",
+	"知": "Z-X/W",
 	"。": "DGI",
 	"，": "-DGI"
 
