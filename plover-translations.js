@@ -1,5 +1,4 @@
 TypeJig.Translations.Plover = {
-	"
 	"D": "D",
 	"G": "G",
 	"I": "I",
