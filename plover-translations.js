@@ -316,7 +316,7 @@ TypeJig.Translations.Plover = {
 	"次日": "BDZ-XBZ",
 	"步子": "B-DZ",
 	"鋪子": "BG-DZ",
-	"卜辭": "BG-BDZ",
+	"卜辭": "B-BDZ",
 	"目次": "XB-BDZ",
 	"復次": "XBU-BDZ",
 	"不死": "B-XDZ",
