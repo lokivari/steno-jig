@@ -412,6 +412,7 @@ TypeJig.Translations.Plover = {
 	"值日": "Z-XBZ",
 	"布": "B-BG/-W",
 	"是": "XZI",
+	"不是": "B-XZI",
 	"。": "DGI",
 	"，": "-DGI"
 
