@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Yanheng Jig</title>
+	<link href="style.css" rel="stylesheet" type="text/css">
+	<script src="type-jig.js"></script>
+	<script src="steno-display.js"></script>
+	<script src="word-sets.js"></script>
+	<script src="plover-translations.js"></script>
+	<link rel="stylesheet" type="text/css" href="font-roboto.css">
+<style>
+	body {
+		margin: 0;
+	}
+	.center {
+		margin: auto;
+		width: 80%;
+		padding: 10px;
+	}
+	table, th, td {
+    	border: 1px solid black;
+	}
+	th, td {
+    	text-align: center;
+	}
+	p {
+		margin: auto;
+	}
+	#t1 {
+		-moz-tab-size: 4; /* Code for Firefox */
+		-o-tab-size: 4; /* Code for Opera 10.6-12.1 */
+		tab-size: 4;
+	}
+	ol {
+		padding: 20px;
+	}
+	.nav {
+	    list-style-type: none;
+	    margin: 0;
+	    padding: 0;
+	    width: 175px;
+	    background-color: #f1f1f1;
+	    position: fixed;
+	    height: 100%;
+	    overflow: auto;
+	}
+	li a {
+	    display: block;
+	    color: #000;
+	    padding: 8px 16px;
+	    text-decoration: none;
+	}
+	li a.active {
+		background-color: blue;
+    		color: white;
+	}
+	li a:hover:not(.active) {
+		background-color: #f1f1f1;
+		color: blue;
+	}
+}
+</style>
+</head>
+<body>
+	
+<ul class="nav">
+	<li><a href="index.html">Home</a></li>
+	<li><a href="preface.html">Preface</a></li>
+	<li><a href="ch1.html">Lesson 1</a></li>
+  <li><a href="ch2.html">Lesson 2</a></li>
+	<li><a href="ch3.html">Lesson 3</a></li>
+  <li><a href="ch4.html">Lesson 4</a></li>
+  <li><a class="active" href="ch5.html">Lesson 5</a></li>
+</ul>
+	
+<div style="margin-left:200px;padding:1px 16px;">
+	<h3 class="center">第四講 捲舌音與聯詞消字定字 | Chapter 5: Alveolar Consonants and Character Selection by Association</h3>
+	<h4>壹　編碼、讀音 | A. Yawei Codes and Readings</h4>
+<br>	
+<table>
+	<tr>
+		<th>亞偉碼<br>Yawei Code</th><td><code>DZ</code></td><td><code>BDZ</code></td><td><code>XDZ</code></td>
+	</tr>
+	<tr>
+		<th>注音符號<br>Zhuyin</th><td>ㄗ</td><td>ㄘ</td><td>ㄙ</td>
+	</tr>
+	<tr>
+		<th>漢語拼音<br>Pinyin</th><td>zi</td><td>ci</td><td>si</td>
+	</tr>
+	<tr>
+		<th>例字<br>Example</th><td>子</td><td>此</td><td>思</td>
+	</tr>
+</table>
+<br>	
+	<br>
+	<h4>貳 略碼 | B. Briefs</h4>
+	<h5>1. 雙音略碼詞語 | 1. 1-2 Briefs</h5>
+  <br>
+	<table>
+		<tr>
+			<th>[首音節碼]<code>-X</code><br>[1st syl.]<code>-X</code></th><td>自然</td><td>刺激</td><td>思想</td>
+		</tr>
+		<tr>
+			<th>[首音節碼]<code>-X</code><br>[1st syl.]<code>-W</code></th><td>自己</td><td>此外</td><td>飼料</td>
+		</tr>
+	</table>
+	<h5>2. 三音略碼詞語 | 2. 3-Character Briefs</h5>
+	<p>
+		常用三音詞語的具體略打方法是：<br>
+    Briefs for common three-character phrases are as follows:
+  </p>
+	<table>
+		<tr>
+			<th>[首音節碼]<code>/X-X</code><br>[1st syl.]<code>/X-X</code></th><td>自動化</td><td>思想家</td>
+		</tr>
+	</table>
+  <br>
+  <h4>參 中文字特定碼 | C. Specific Character Codes</h4>
+  <h5>1. 中文小寫數字特定碼及與其相關的雙音略碼詞語 | Codes for Numbers and Associated Phrases
+  <br>
+	<table>
+		<tr>
+			<td><code>XZW</code></th><td>十</td><td><code>ZW</code></th><td>四</td>
+		</tr>
+    <tr>
+			<td><code>XZW-X</code></th><td>十分</td><td><code>ZW-X</code></th><td>四川</td>
+		</tr>
+    <tr>
+			<td><code>XZW-W</code></th><td>十月</td><td><code>ZW-W</code></th><td>四月</td>
+		</tr>
+	</table>
+  <br>
+  <h5>2. 高頻特定單音詞 | Codes for Individual High Frequency Characters</h5>
+  <br>
+  <p> 
+  超高頻特定單音詞：<code>XZI</code>（是）。<br>
+  The specific character code for the high-frequency character 是 "to be" is <code>XZI</code>.<br>
+	一、超高頻特定碼「是」的特定方法與中文小寫數字特定碼有所不同，是借用有音無字的音節碼來表示的，全書只此一個。<br>
+  A) Unlike codes for numbers, which use <code>W</code> either in addition to the normal syllable code or replacing some part of the syllable code, 
+  the code for 是 <code>XZI</code> is the normal syllable code plus the empty vowel <code>I</code>. This is the only such code.<br>
+  二、一級高頻特定單音詞的打法：<code>X-</code>單字音節碼，舉例：<br>
+  B) 1st tier high frequency single characters are stroked using <code>X-</code>[syl.], as shown below.<br>
+	的（<code>X-D</code>）、自（<code>X-DZ</code>）<br>
+	特（<code>X-BD</code>）、使（<code>X-XZ</code>）<br>
+ 	三、二級高頻特定單音詞的打法：<code>W-</code>單字音節碼，舉例：<br>
+  C) 2nd tier high frequency single characters are stroked using <code>W-</code>[syl.], as shown below.<br>
+  得（<code>W-D</code>）、字（<code>W-DZ</code>）<br>
+  時（<code>W-XZ</code>）、次（<code>W-BDZ</code>）<br>
+  四、三級高頻特定單音詞的打法：<code>XW-</code>單字音節碼，全書共10個，如下：<br>
+  D) 3rd tier high frequency single characters are stroked using <code>XW-</code>[syl.], of which there are only ten, as shown below.<br>
+	乘（XW-BZNE）、處（XW-BZU）<br>
+	又（XW-IEO）、予（XW-IU）<br>
+	即（XW-GI）、神（XW-XZN）<br>
+	省（XW-XZNE）、唯（XW-UE）<br>
+	縣（XW-XINA）、爭（XW-ZNE）<br>
+  </p>
+
+<div class="form-section">
+		<div class="caption">Chapter five exercises.</div>
+		<ul>
+			<li><a href="form.html?drill=Ch5initials&type=randomly&timeLimit=5&hints=true">Two character phrases [zcs] with hints.</a></li>
+			<li><a href="form.html?drill=Ch5initials&type=randomly&timeLimit=5">Two character phrases [zcs], no hints.</a></li>
+      <li><a href="form.html?drill=Ch5briefs&type=randomly&timeLimit=5&hints=true">Chapter 5 briefs etc., with hints.</a></li>
+      <li><a href="form.html?drill=Ch5briefs&type=randomly&timeLimit=5">Chapter 5 briefs etc., no hints.</a></li>
+      <li><a href="form.html?drill=Ch5initials&drill=Ch5briefs&drill=Ch5additional&type=randomly&timeLimit=5&hints=true">Comprehensive practice, with hints.</a></li>
+      <li><a href="form.html?drill=Ch5initials&drill=Ch5briefs&drill=Ch5additional&type=randomly&timeLimit=5">Comprehensive practice, no hints.</a></li>
+			<li><a href="form.html?drill=Ch5sentences&hints=true">Sentence practice with hints.</a></li>
+			<li><a href="form.html?drill=Ch5sentences">Sentence practice without hints.</a></li>
+		</ul>
+		</div>
+</div>
+</body>
+</html>
