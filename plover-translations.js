@@ -410,6 +410,7 @@ TypeJig.Translations.Plover = {
 	"八十": "BW-XZW",
 	"十四": "XZW-ZW",
 	"值日": "Z-XBZ",
+	"布": "B-BG/-W",
 	"是": "XZI",
 	"。": "DGI",
 	"，": "-DGI"
